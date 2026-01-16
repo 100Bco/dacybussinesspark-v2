@@ -215,11 +215,11 @@ export const PlexusSphereSection: React.FC<PlexusSphereProps> = ({ isMobile = fa
           padding: '0 20px',
       }}>
          <h2 style={{
-             fontFamily: '"Playfair Display", serif',
+             fontFamily: 'Montserrat, sans-serif',
              fontSize: 'clamp(28px, 5vw, 48px)',
              color: '#1A1A1A',
              margin: '0 auto',
-             fontWeight: 500,
+             fontWeight: 700,
              letterSpacing: '-0.02em',
              lineHeight: 1.1,
              // Halo màu trắng quanh chữ để tách chữ khỏi các đường dây đen
