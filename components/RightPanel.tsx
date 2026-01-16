@@ -42,10 +42,10 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 2: THE BUSINESS CASE */}
-      <section className="h-screen bg-paper overflow-y-auto flex items-center">
-        <div className="px-6 md:px-8 lg:px-16 max-w-7xl mx-auto py-6 md:py-8 w-full">
+      <section className="bg-paper py-12 md:py-16 lg:py-20">
+        <div className="px-6 md:px-8 lg:px-16 max-w-7xl mx-auto w-full">
            {/* Title Group */}
-           <div className="mb-6 md:mb-10 max-w-4xl">
+           <div className="mb-10 md:mb-12 max-w-4xl">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-3 md:mb-4 leading-[0.95] tracking-tight">
                 The Pre-Market <br/>Preview.
               </h2>
@@ -130,11 +130,11 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 3: THE HOSPITALITY */}
-      <section className="h-screen bg-canvas overflow-y-auto flex items-center">
-        <div className="px-6 md:px-8 lg:px-16 max-w-[1600px] mx-auto py-6 md:py-8 w-full">
+      <section className="bg-canvas py-12 md:py-16 lg:py-20">
+        <div className="px-6 md:px-8 lg:px-16 max-w-[1600px] mx-auto w-full">
 
             {/* Header Area */}
-            <div className="mb-6 md:mb-8 max-w-4xl">
+            <div className="mb-8 md:mb-10 max-w-4xl">
                <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-3 md:mb-4 leading-none">Crafted <br/>Conversations.</h2>
                <p className="text-sm md:text-base text-graphite leading-relaxed mb-3 md:mb-4 font-sans font-light max-w-2xl">
                  Most open houses are transactional. This is relational. We are trading sales pitches for genuine connection, fueled by local culinary craftsmanship.
@@ -188,8 +188,8 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 4: THE STRATEGIC PARTNERS */}
-      <section className="h-screen px-6 md:px-8 lg:px-16 bg-white border-y border-gray-100 overflow-y-auto flex items-center">
-        <div className="max-w-5xl mx-auto text-center py-6 md:py-8 w-full">
+      <section className="px-6 md:px-8 lg:px-16 bg-white border-y border-gray-100 py-12 md:py-16 lg:py-20">
+        <div className="max-w-5xl mx-auto text-center w-full">
            <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-6 md:mb-8">In Association With</h2>
 
            {/* Tier 1 */}
@@ -242,8 +242,8 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 5: RSVP FORM */}
-      <section id="rsvp-section" className="h-screen px-6 md:px-8 lg:px-16 bg-canvas scroll-mt-0 overflow-y-auto flex items-center">
-        <div className="max-w-2xl mx-auto py-8 md:py-10 w-full">
+      <section id="rsvp-section" className="px-6 md:px-8 lg:px-16 bg-canvas scroll-mt-0 py-12 md:py-16 lg:py-20">
+        <div className="max-w-2xl mx-auto w-full">
           <div className="mb-8 md:mb-10 text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-3 md:mb-4 leading-none">Confirm Your Attendance.</h2>
             <p className="text-graphite font-sans text-sm md:text-base font-light">Space is strictly limited to ensure quality networking.</p>
