@@ -40,7 +40,7 @@ export const LeftPanel: React.FC = () => {
           <img
             src="/images/partners/Dacy%20logo.png"
             alt="Dacy Business Park"
-            className="h-8 object-contain brightness-0 invert"
+            className="h-10 object-contain"
           />
         </div>
         
