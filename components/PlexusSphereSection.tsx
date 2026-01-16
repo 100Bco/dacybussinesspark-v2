@@ -21,18 +21,20 @@ export const PlexusSphereSection: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
+    // Set canvas size - much larger to fill container
     const updateSize = () => {
-      const size = Math.min(window.innerWidth * 0.9, 600);
-      canvas.width = size;
-      canvas.height = size;
+      const container = canvas.parentElement;
+      if (container) {
+        canvas.width = container.clientWidth;
+        canvas.height = container.clientHeight;
+      }
     };
     updateSize();
     window.addEventListener('resize', updateSize);
 
-    // Initialize nodes in 3D sphere
-    const nodeCount = 80;
-    const radius = canvas.width * 0.35;
+    // Initialize nodes in 3D sphere - fewer nodes, smaller radius
+    const nodeCount = 40;
+    const radius = Math.min(canvas.width, canvas.height) * 0.15;
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
 
@@ -100,13 +102,8 @@ export const PlexusSphereSection: React.FC = () => {
             const rotatedX2 = otherNode.x * Math.cos(rotation) - otherNode.z * Math.sin(rotation);
             const rotatedZ2 = otherNode.x * Math.sin(rotation) + otherNode.z * Math.cos(rotation);
 
-            // Calculate depth-based darkness
-            const depth1 = (rotatedZ1 / radius + 1) / 2;
-            const depth2 = (rotatedZ2 / radius + 1) / 2;
-            const avgDepth = (depth1 + depth2) / 2;
-
-            const gray = Math.floor(26 + avgDepth * 60);
-            ctx.strokeStyle = `rgba(${gray}, ${gray}, ${gray}, ${opacity * 0.4})`;
+            // Much more subtle lines
+            ctx.strokeStyle = `rgba(0, 0, 0, ${opacity * 0.08})`;
             ctx.lineWidth = 0.5;
 
             ctx.beginPath();
@@ -117,17 +114,16 @@ export const PlexusSphereSection: React.FC = () => {
         });
       });
 
-      // Draw nodes
+      // Draw nodes - much more subtle
       sortedNodes.forEach((node) => {
         const rotatedX = node.x * Math.cos(rotation) - node.z * Math.sin(rotation);
         const rotatedZ = node.x * Math.sin(rotation) + node.z * Math.cos(rotation);
 
-        // Calculate depth for size and color variation
-        const depth = (rotatedZ / radius + 1) / 2; // 0 to 1
-        const size = 1.5 + depth * 2.5; // Larger dots in front
-        const gray = Math.floor(20 + depth * 70);
+        // Much smaller and more subtle dots
+        const depth = (rotatedZ / radius + 1) / 2;
+        const size = 1 + depth * 1.5;
 
-        ctx.fillStyle = `rgb(${gray}, ${gray}, ${gray})`;
+        ctx.fillStyle = `rgba(0, 0, 0, ${0.15 + depth * 0.15})`;
         ctx.beginPath();
         ctx.arc(centerX + rotatedX, centerY + node.y, size, 0, Math.PI * 2);
         ctx.fill();
@@ -147,27 +143,23 @@ export const PlexusSphereSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-canvas py-12 md:py-16 lg:py-20">
-      <div className="px-6 md:px-8 lg:px-16 max-w-[1600px] mx-auto w-full">
-        <div className="flex flex-col items-center justify-center">
-          {/* Canvas Container */}
-          <div className="relative w-full max-w-[600px] mx-auto mb-8 md:mb-10">
-            <canvas
-              ref={canvasRef}
-              className="w-full h-auto"
-              style={{
-                background: '#FFFFFF',
-                borderRadius: '4px',
-                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08)'
-              }}
-            />
+    <section className="bg-[#f5f5f5] py-20 md:py-32 lg:py-40 relative overflow-hidden">
+      <div className="px-6 md:px-8 lg:px-16 max-w-7xl mx-auto w-full">
+        <div className="relative min-h-[400px] md:min-h-[500px] flex items-center justify-center">
+          {/* Canvas Background - Full container */}
+          <canvas
+            ref={canvasRef}
+            className="absolute inset-0 w-full h-full"
+            style={{
+              background: 'transparent'
+            }}
+          />
 
-            {/* Center Text Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-ink text-center px-6 leading-tight tracking-tight max-w-md">
-                Gathering the pieces of the industry
-              </h2>
-            </div>
+          {/* Center Text - In front */}
+          <div className="relative z-10 text-center px-6">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-ink leading-tight tracking-tight max-w-4xl mx-auto" style={{ fontFamily: 'Playfair Display, serif' }}>
+              Gathering the pieces of the industry
+            </h2>
           </div>
         </div>
       </div>
