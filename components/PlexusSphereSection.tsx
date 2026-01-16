@@ -1,18 +1,43 @@
 import React, { useEffect, useRef } from 'react';
 
-interface Node {
+interface Point {
   x: number;
   y: number;
   z: number;
-  vx: number;
-  vy: number;
-  vz: number;
 }
 
-export const PlexusSphereSection: React.FC = () => {
+interface PlexusSphereProps {
+  isMobile?: boolean;
+}
+
+export const PlexusSphereSection: React.FC<PlexusSphereProps> = ({ isMobile = false }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const nodesRef = useRef<Node[]>([]);
-  const animationRef = useRef<number>();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // --- 1. BẢNG THÔNG SỐ (CONFIGURATION) ---
+  const config = {
+    // Số lượng hạt (Nodes):
+    // Desktop để 150 cho dày, Mobile giảm xuống 70 cho mượt.
+    particleCount: isMobile ? 70 : 150,
+
+    // Khoảng cách kết nối (Connection Threshold):
+    // Nếu 2 điểm gần nhau hơn khoảng này (px) thì vẽ đường kẻ.
+    connectionDistance: isMobile ? 80 : 110,
+
+    // Bán kính quả cầu (Radius):
+    radius: isMobile ? 130 : 200,
+
+    // Tốc độ xoay (Rotation Speed):
+    // 0.0015 là tốc độ "chill", sang trọng. Tăng lên sẽ xoay nhanh hơn.
+    rotationSpeed: 0.0015,
+
+    // Hiệu ứng phối cảnh (Perspective/FOV):
+    // Càng nhỏ thì hiệu ứng 3D càng gắt (gần to, xa nhỏ). 450 là trung tính.
+    perspective: 450,
+
+    // Độ mờ cơ bản của đường kẻ (Line Opacity):
+    lineBaseOpacity: 0.8
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -21,151 +46,187 @@ export const PlexusSphereSection: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size - much larger to fill container
-    const updateSize = () => {
-      const container = canvas.parentElement;
-      if (container) {
-        canvas.width = container.clientWidth;
-        canvas.height = container.clientHeight;
-      }
+    let animationFrameId: number;
+    let width: number;
+    let height: number;
+
+    // --- 2. THUẬT TOÁN FIBONACCI SPHERE ---
+    // Giúp rải đều các điểm lên mặt cầu, không bị tụ lại ở 2 cực.
+
+    const points: Point[] = [];
+    for (let i = 0; i < config.particleCount; i++) {
+      const k = i + 0.5;
+      const phi = Math.acos(1 - 2 * k / config.particleCount);
+      const theta = Math.PI * (1 + Math.sqrt(5)) * k;
+
+      points.push({
+        x: Math.cos(theta) * Math.sin(phi) * config.radius,
+        y: Math.sin(theta) * Math.sin(phi) * config.radius,
+        z: Math.cos(phi) * config.radius
+      });
+    }
+
+    let angleY = 0;
+
+    // Xử lý Resize màn hình
+    const resize = () => {
+        if(containerRef.current) {
+            width = containerRef.current.offsetWidth;
+            height = containerRef.current.offsetHeight;
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            ctx.scale(dpr, dpr); // Retina fix
+            canvas.style.width = `${width}px`;
+            canvas.style.height = `${height}px`;
+        }
     };
-    updateSize();
-    window.addEventListener('resize', updateSize);
 
-    // Initialize nodes in 3D sphere - visible sphere
-    const nodeCount = 60;
-    const radius = Math.min(canvas.width, canvas.height) * 0.25;
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
+    window.addEventListener('resize', resize);
+    resize();
 
-    // Create nodes distributed on a sphere surface
-    nodesRef.current = Array.from({ length: nodeCount }, () => {
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
-
-      return {
-        x: radius * Math.sin(phi) * Math.cos(theta),
-        y: radius * Math.sin(phi) * Math.sin(theta),
-        z: radius * Math.cos(phi),
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        vz: (Math.random() - 0.5) * 0.3,
-      };
-    });
-
-    let rotation = 0;
-
-    const animate = () => {
+    // --- 3. VÒNG LẶP RENDER (RENDER LOOP) ---
+    const render = () => {
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      rotation += 0.003;
+      const dpr = window.devicePixelRatio || 1;
+      ctx.scale(dpr, dpr);
 
-      // Update and draw nodes
-      nodesRef.current.forEach((node) => {
-        // Gentle floating motion
-        node.x += node.vx;
-        node.y += node.vy;
-        node.z += node.vz;
+      const centerX = width / 2;
+      const centerY = height / 2;
 
-        // Keep nodes roughly on sphere surface with soft boundaries
-        const dist = Math.sqrt(node.x ** 2 + node.y ** 2 + node.z ** 2);
-        if (dist > radius * 1.2 || dist < radius * 0.8) {
-          const scale = radius / dist;
-          node.x *= scale;
-          node.y *= scale;
-          node.z *= scale;
-          node.vx *= -0.5;
-          node.vy *= -0.5;
-          node.vz *= -0.5;
+      angleY += config.rotationSpeed;
+
+      // Tính toán vị trí 3D -> 2D
+      const projectedPoints = points.map(p => {
+        // Xoay quanh trục Y
+        const cosY = Math.cos(angleY);
+        const sinY = Math.sin(angleY);
+        let x = p.x * cosY - p.z * sinY;
+        let z = p.z * cosY + p.x * sinY;
+        let y = p.y;
+
+        // Nghiêng nhẹ trục X (Tilt) để nhìn góc 3/4 đẹp hơn
+        const tilt = 0.3;
+        const cosT = Math.cos(tilt);
+        const sinT = Math.sin(tilt);
+        let y_rot = y * cosT - z * sinT;
+        let z_rot = z * cosT + y * sinT;
+        y = y_rot;
+        z = z_rot;
+
+        // Phối cảnh xa gần (Perspective Projection)
+        const scale = config.perspective / (config.perspective + z + config.radius * 1.5);
+        const projX = x * scale + centerX;
+        const projY = y * scale + centerY;
+
+        return { x: projX, y: projY, z: z, scale: scale, renderX: x, renderY: y, renderZ: z };
+      });
+
+      // Vẽ đường nối (Connections)
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < projectedPoints.length; i++) {
+        const p1 = projectedPoints[i];
+        for (let j = i + 1; j < projectedPoints.length; j++) {
+            const p2 = projectedPoints[j];
+
+            // Tính khoảng cách 3D thực tế
+            const dx = p1.renderX - p2.renderX;
+            const dy = p1.renderY - p2.renderY;
+            const dz = p1.renderZ - p2.renderZ;
+            const dist3d = Math.sqrt(dx*dx + dy*dy + dz*dz);
+
+            if (dist3d < config.connectionDistance) {
+                // Hạt càng xa nhau, dây càng mờ
+                const alpha = 1 - (dist3d / config.connectionDistance);
+                // Hạt ở sâu bên trong thì mờ hơn (Depth Cue)
+                const depth = (p1.scale + p2.scale) * 0.5;
+
+                ctx.strokeStyle = `rgba(30, 30, 30, ${alpha * depth * config.lineBaseOpacity})`;
+                ctx.beginPath();
+                ctx.moveTo(p1.x, p1.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.stroke();
+            }
         }
-      });
+      }
 
-      // Sort nodes by z-depth for proper rendering
-      const sortedNodes = [...nodesRef.current].sort((a, b) => a.z - b.z);
+      // Vẽ hạt (Nodes)
+      for (let i = 0; i < projectedPoints.length; i++) {
+          const p = projectedPoints[i];
+          const radius = isMobile ? 1.5 : 2.5;
+          // Độ trong suốt dựa trên chiều sâu
+          const alpha = Math.min(1, Math.max(0.2, p.scale));
 
-      // Draw connections
-      ctx.strokeStyle = '#1a1a1a';
-      sortedNodes.forEach((node, i) => {
-        sortedNodes.slice(i + 1).forEach((otherNode) => {
-          const dx = node.x - otherNode.x;
-          const dy = node.y - otherNode.y;
-          const dz = node.z - otherNode.z;
-          const distance = Math.sqrt(dx ** 2 + dy ** 2 + dz ** 2);
+          ctx.fillStyle = `rgba(0, 0, 0, ${alpha})`;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, radius * p.scale, 0, Math.PI * 2);
+          ctx.fill();
+      }
 
-          // Draw line if nodes are close enough
-          if (distance < radius * 0.6) {
-            const opacity = 1 - distance / (radius * 0.6);
-
-            // Apply rotation
-            const rotatedX1 = node.x * Math.cos(rotation) - node.z * Math.sin(rotation);
-            const rotatedZ1 = node.x * Math.sin(rotation) + node.z * Math.cos(rotation);
-            const rotatedX2 = otherNode.x * Math.cos(rotation) - otherNode.z * Math.sin(rotation);
-            const rotatedZ2 = otherNode.x * Math.sin(rotation) + otherNode.z * Math.cos(rotation);
-
-            // Visible lines with depth
-            const depth1 = (rotatedZ1 / radius + 1) / 2;
-            const depth2 = (rotatedZ2 / radius + 1) / 2;
-            const avgDepth = (depth1 + depth2) / 2;
-
-            ctx.strokeStyle = `rgba(0, 0, 0, ${opacity * (0.15 + avgDepth * 0.15)})`;
-            ctx.lineWidth = 0.8;
-
-            ctx.beginPath();
-            ctx.moveTo(centerX + rotatedX1, centerY + node.y);
-            ctx.lineTo(centerX + rotatedX2, centerY + otherNode.y);
-            ctx.stroke();
-          }
-        });
-      });
-
-      // Draw nodes - visible dots
-      sortedNodes.forEach((node) => {
-        const rotatedX = node.x * Math.cos(rotation) - node.z * Math.sin(rotation);
-        const rotatedZ = node.x * Math.sin(rotation) + node.z * Math.cos(rotation);
-
-        // Visible dots with depth variation
-        const depth = (rotatedZ / radius + 1) / 2;
-        const size = 2 + depth * 2;
-
-        ctx.fillStyle = `rgba(0, 0, 0, ${0.4 + depth * 0.3})`;
-        ctx.beginPath();
-        ctx.arc(centerX + rotatedX, centerY + node.y, size, 0, Math.PI * 2);
-        ctx.fill();
-      });
-
-      animationRef.current = requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(render);
     };
 
-    animate();
+    render();
 
     return () => {
-      window.removeEventListener('resize', updateSize);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      window.removeEventListener('resize', resize);
+      cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [isMobile, config.particleCount, config.connectionDistance, config.radius, config.rotationSpeed, config.perspective, config.lineBaseOpacity]);
 
   return (
-    <section className="bg-white py-16 md:py-20 lg:py-24 relative overflow-hidden">
-      <div className="px-6 md:px-8 lg:px-16 max-w-6xl mx-auto w-full">
-        <div className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px] flex items-center justify-center">
-          {/* Canvas Background - Full container */}
-          <canvas
-            ref={canvasRef}
-            className="absolute inset-0 w-full h-full"
-            style={{
-              background: 'transparent'
-            }}
-          />
+    <section
+      ref={containerRef}
+      style={{
+        height: '600px',
+        width: '100%',
+        position: 'relative',
+        backgroundColor: '#FFFFFF',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden'
+      }}
+    >
+      <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />
 
-          {/* Center Text - In front */}
-          <div className="relative z-10 text-center px-6">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-ink leading-tight tracking-tight max-w-4xl mx-auto" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Gathering the pieces of the industry
-            </h2>
-          </div>
-        </div>
+      {/* --- 4. HIỆU ỨNG BÓNG ĐỔ (FLOOR SHADOW) --- */}
+      <div style={{
+          position: 'absolute',
+          bottom: '12%',              // Đặt bóng nằm thấp xuống sàn
+          left: '50%',
+          transform: 'translateX(-50%)', // Căn giữa
+          width: '50%',               // Chiều rộng bóng bằng 50% khung
+          height: '40px',             // Chiều cao bóng (hình oval dẹt)
+          // Gradient tròn: Tâm đen mờ (0.08) lan ra trong suốt (0)
+          background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0) 70%)',
+          filter: 'blur(10px)',       // Làm nhòe để tạo cảm giác bóng mềm (Ambient Occlusion)
+          pointerEvents: 'none'
+      }}></div>
+
+      {/* Central Text */}
+      <div style={{
+          position: 'relative',
+          zIndex: 10,
+          textAlign: 'center',
+          pointerEvents: 'none',
+          padding: '0 20px',
+      }}>
+         <h2 style={{
+             fontFamily: '"Playfair Display", serif',
+             fontSize: 'clamp(28px, 5vw, 48px)',
+             color: '#1A1A1A',
+             margin: '0 auto',
+             fontWeight: 500,
+             letterSpacing: '-0.02em',
+             lineHeight: 1.1,
+             // Halo màu trắng quanh chữ để tách chữ khỏi các đường dây đen
+             textShadow: '0 0 30px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.9)'
+         }}>
+             Gathering the<br/>pieces of the industry
+         </h2>
       </div>
     </section>
   );
