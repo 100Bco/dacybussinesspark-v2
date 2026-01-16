@@ -13,7 +13,7 @@ export const CurtainReveal: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-0 md:hidden">
+    <div className="relative w-full h-0">
       {/* Left Curtain */}
       <div
         className={`fixed top-0 left-0 h-screen w-1/2 bg-ink z-50 transition-transform duration-[1500ms] ease-out ${
@@ -43,7 +43,7 @@ export const CurtainReveal: React.FC = () => {
         <img
           src="/images/partners/Dacy%20logo.png"
           alt="Dacy Business Park"
-          className="h-20 object-contain"
+          className="h-20 md:h-24 lg:h-32 object-contain"
         />
       </div>
     </div>
