@@ -144,7 +144,7 @@ export const RightPanel: React.FC = () => {
            </div>
 
            {/* Tier 3: Hospitality Logos */}
-           <div className="border-t border-gray-200 pt-6 md:pt-8 max-w-2xl mx-auto">
+           <div className="pt-6 md:pt-8 max-w-2xl mx-auto">
              <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 lg:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
 
                 {/* Taco Man Logo */}
