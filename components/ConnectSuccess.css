@@ -1,15 +1,14 @@
 /* file: components/ConnectSuccess.css */
 
 /* Import Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
 .connect-success-section {
     height: 700px;
     width: 100%;
     position: relative;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF; /* Nền trắng */
     overflow: hidden;
-    /* border-bottom: 1px solid #eee; -> Bỏ cái này nếu muốn liền mạch */ 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,13 +16,13 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Hiệu ứng nền chấm */
+/* Hiệu ứng nền chấm mờ */
 .bg-grid {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(#E0E0E0 1px, transparent 1px);
+    background-image: radial-gradient(#E5E5E5 1px, transparent 1px);
     background-size: 30px 30px;
-    opacity: 0.5;
+    opacity: 0.6;
     pointer-events: none;
 }
 
@@ -33,84 +32,98 @@
     height: 100%;
 }
 
-/* Định nghĩa Animation "Thở" */
+/* Animation vòng tròn thở */
 @keyframes breathe {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.08); }
-    100% { transform: translate(-50%, -50%) scale(1); }
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
 }
 
 .pulse-ring {
     position: absolute;
-    top: 50%; /* Chỉnh lại top để căn giữa chuẩn hơn */
+    top: 50%;
     left: 50%;
     border-radius: 50%;
-    border: 1px dashed rgba(0,0,0,0.15);
+    border: 1px dashed rgba(0, 0, 0, 0.15);
     transform: translate(-50%, -50%);
     pointer-events: none;
-    animation: breathe 3s ease-in-out infinite;
+    animation: breathe 4s ease-in-out infinite;
 }
 
-/* Các kích thước vòng tròn */
-.ring-large { width: 550px; height: 550px; }
-.ring-medium { width: 380px; height: 380px; animation-delay: 0.3s; }
-.ring-small { width: 220px; height: 220px; animation-delay: 0.6s; }
+/* Kích thước các vòng tròn */
+.ring-large { width: 600px; height: 600px; }
+.ring-medium { width: 420px; height: 420px; animation-delay: 0.5s; }
+.ring-small { width: 240px; height: 240px; animation-delay: 1s; }
 
-/* Chấm đỏ trên vòng tròn */
+/* Chấm đỏ */
 .ring-dot {
     position: absolute;
-    top: -4px;
+    top: -5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 8px;
-    height: 8px;
-    background-color: #D32F2F; /* Màu đỏ Dacy */
+    width: 10px;
+    height: 10px;
+    background-color: #D32F2F;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(211, 47, 47, 0.5); /* Thêm shadow cho đẹp */
+    box-shadow: 0 0 8px rgba(211, 47, 47, 0.4);
 }
 
-/* Hộp trung tâm */
-.center-card /* File: components/ConnectSuccess.css */
-
+/* Căn giữa TEXT (Không còn hộp trắng) */
 .center-card {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 20;
     
-    /* Thiết lập trong suốt để bỏ khối hộp */
     background: transparent;
     box-shadow: none;
     border: none;
     padding: 0;
     
     text-align: center;
-    z-index: 10;
-    min-width: max-content; /* Để text không bị xuống dòng lộn xộn */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: max-content;
 }
 
+/* Style cho chữ CONNECT */
 .card-title {
-    font-weight: 800;
-    font-size: 20px;
-    color: #111;
-    letter-spacing: -0.5px;
-}
-
-.card-subtitle {
-    font-size: 10px;
-    color: #D32F2F;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-top: 4px;
+    font-weight: 900;
+    font-size: 48px; /* Chữ to */
+    color: #121212;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin: 0;
     text-transform: uppercase;
 }
 
-/* Responsive cho Mobile */
+/* Style cho chữ THE SUCCESS */
+.card-subtitle {
+    font-size: 14px;
+    color: #D32F2F;
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+
+/* Responsive Mobile */
 @media (max-width: 768px) {
     .connect-success-section {
         height: 500px;
     }
-    .ring-large { width: 320px; height: 320px; }
-    .ring-medium { width: 240px; height: 240px; }
+    .card-title {
+        font-size: 32px;
+    }
+    .card-subtitle {
+        font-size: 11px;
+        letter-spacing: 3px;
+        margin-top: 8px;
+    }
+    .ring-large { width: 340px; height: 340px; }
+    .ring-medium { width: 250px; height: 250px; }
     .ring-small { width: 160px; height: 160px; }
 }
