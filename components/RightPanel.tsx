@@ -118,7 +118,7 @@ export const RightPanel: React.FC = () => {
       <PlexusSphereSection isMobile={isMobile} />
 
       {/* SECTION 4: THE STRATEGIC PARTNERS */}
-      <section className="px-6 md:px-8 lg:px-16 bg-white border-y border-gray-100 py-12 md:py-16 lg:py-20">
+      <section className="px-6 md:px-8 lg:px-16 bg-white py-12 md:py-16 lg:py-20">
         <div className="max-w-5xl mx-auto text-center w-full">
            <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-6 md:mb-8">In Association With</h2>
 
