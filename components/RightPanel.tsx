@@ -25,7 +25,7 @@ export const RightPanel: React.FC = () => {
     <div className="w-full bg-paper text-ink selection:bg-alert/10 selection:text-alert">
       
       {/* SECTION 1: HERO VIDEO */}
-      <section className="relative h-[80vh] md:h-[95vh] w-full overflow-hidden">
+      <section className="relative h-screen w-full overflow-hidden">
         <img 
           src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2340&auto=format&fit=crop" 
           alt="Networking Atmosphere" 
@@ -42,8 +42,8 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 2: THE BUSINESS CASE */}
-      <section className="py-24 bg-paper">
-        <div className="px-8 md:px-16 max-w-7xl mx-auto">
+      <section className="h-screen bg-paper overflow-y-auto flex items-center">
+        <div className="px-8 md:px-16 max-w-7xl mx-auto py-16 w-full">
            {/* Title Group */}
            <div className="mb-20 max-w-4xl">
               <h2 className="text-6xl font-montserrat font-bold text-ink mb-8 leading-[0.95] tracking-tight">
@@ -130,8 +130,8 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 3: THE HOSPITALITY */}
-      <section className="py-24 bg-canvas">
-        <div className="px-8 md:px-16 max-w-[1600px] mx-auto">
+      <section className="h-screen bg-canvas overflow-y-auto flex items-center">
+        <div className="px-8 md:px-16 max-w-[1600px] mx-auto py-16 w-full">
             
             {/* Header Area */}
             <div className="mb-16 max-w-4xl">
@@ -188,8 +188,8 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 4: THE STRATEGIC PARTNERS */}
-      <section className="py-24 px-8 md:px-16 bg-white border-y border-gray-100">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="h-screen px-8 md:px-16 bg-white border-y border-gray-100 overflow-y-auto flex items-center">
+        <div className="max-w-5xl mx-auto text-center py-16 w-full">
            <h2 className="text-6xl font-montserrat font-bold text-ink mb-16">In Association With</h2>
            
            {/* Tier 1 */}
@@ -233,8 +233,8 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 5: RSVP FORM */}
-      <section id="rsvp-section" className="py-24 px-8 md:px-16 bg-canvas scroll-mt-0">
-        <div className="max-w-3xl mx-auto">
+      <section id="rsvp-section" className="h-screen px-8 md:px-16 bg-canvas scroll-mt-0 overflow-y-auto flex items-center">
+        <div className="max-w-3xl mx-auto py-16 w-full">
           <div className="mb-16 text-center">
             <h2 className="text-6xl font-montserrat font-bold text-ink mb-6">Confirm Your Attendance.</h2>
             <p className="text-graphite font-sans text-lg font-light">Space is strictly limited to ensure quality networking.</p>
