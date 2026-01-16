@@ -70,19 +70,23 @@
 }
 
 /* Hộp trung tâm */
+.center-card /* File: components/ConnectSuccess.css */
+
 .center-card {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #FFFFFF;
-    padding: 25px 40px;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    
+    /* Thiết lập trong suốt để bỏ khối hộp */
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    
     text-align: center;
     z-index: 10;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.05);
+    min-width: max-content; /* Để text không bị xuống dòng lộn xộn */
 }
 
 .card-title {
