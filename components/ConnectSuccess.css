@@ -1,13 +1,13 @@
 /* file: components/ConnectSuccess.css */
 
-/* Import Font */
+/* 1. Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
 .connect-success-section {
     height: 700px;
     width: 100%;
     position: relative;
-    background-color: #FFFFFF; /* Nền trắng */
+    background-color: #FFFFFF;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -16,7 +16,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Hiệu ứng nền chấm mờ */
+/* 2. Nền chấm mờ */
 .bg-grid {
     position: absolute;
     inset: 0;
@@ -32,13 +32,20 @@
     height: 100%;
 }
 
-/* Animation vòng tròn thở */
+/* 3. Animation "Thở" (Phóng to thu nhỏ vòng tròn) */
 @keyframes breathe {
     0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
     50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
     100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
 }
 
+/* 4. Animation "Xoay" (Cho chấm tròn chạy) */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 5. Vòng tròn nét đứt (Cha) */
 .pulse-ring {
     position: absolute;
     top: 50%;
@@ -47,6 +54,7 @@
     border: 1px dashed rgba(0, 0, 0, 0.15);
     transform: translate(-50%, -50%);
     pointer-events: none;
+    /* Animation thở vẫn giữ nguyên */
     animation: breathe 4s ease-in-out infinite;
 }
 
@@ -55,10 +63,22 @@
 .ring-medium { width: 420px; height: 420px; animation-delay: 0.5s; }
 .ring-small { width: 240px; height: 240px; animation-delay: 1s; }
 
-/* Chấm đỏ */
+/* 6. Container của chấm đỏ (Sẽ xoay tròn) */
 .ring-dot {
     position: absolute;
-    top: -5px;
+    inset: 0; /* Phủ kín vòng tròn cha */
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Mặc định xoay trong 20s */
+    animation: spin 20s linear infinite;
+}
+
+/* Tạo chấm đỏ hiển thị bằng ::after */
+.ring-dot::after {
+    content: "";
+    position: absolute;
+    top: -5px; /* Đặt lên viền trên cùng */
     left: 50%;
     transform: translateX(-50%);
     width: 10px;
@@ -68,7 +88,25 @@
     box-shadow: 0 0 8px rgba(211, 47, 47, 0.4);
 }
 
-/* Căn giữa TEXT */
+/* --- TÙY CHỈNH TỐC ĐỘ VÀ CHIỀU XOAY --- */
+
+/* Vòng lớn: Chạy chậm (30s) */
+.ring-large .ring-dot {
+    animation-duration: 30s;
+}
+
+/* Vòng giữa: Chạy ngược chiều kim đồng hồ (Reverse) và nhanh hơn chút */
+.ring-medium .ring-dot {
+    animation-duration: 25s;
+    animation-direction: reverse;
+}
+
+/* Vòng nhỏ: Chạy nhanh nhất (15s) */
+.ring-small .ring-dot {
+    animation-duration: 15s;
+}
+
+/* 7. Căn giữa TEXT */
 .center-card {
     position: absolute;
     top: 50%;
@@ -89,10 +127,10 @@
     min-width: max-content;
 }
 
-/* Style cho chữ CONNECT (Đã giảm size) */
+/* Style cho chữ CONNECT */
 .card-title {
     font-weight: 900;
-    font-size: 36px; /* Giảm từ 48px xuống 36px */
+    font-size: 36px;
     color: #121212;
     letter-spacing: -1px;
     line-height: 1;
@@ -102,21 +140,21 @@
 
 /* Style cho chữ THE SUCCESS */
 .card-subtitle {
-    font-size: 12px; /* Giảm từ 14px xuống 12px */
+    font-size: 12px;
     color: #D32F2F;
     font-weight: 700;
-    letter-spacing: 4px; /* Giãn chữ vừa phải */
+    letter-spacing: 4px;
     margin-top: 10px;
     text-transform: uppercase;
 }
 
-/* Responsive Mobile (Đã giảm size) */
+/* Responsive Mobile */
 @media (max-width: 768px) {
     .connect-success-section {
         height: 500px;
     }
     .card-title {
-        font-size: 24px; /* Giảm từ 32px xuống 24px */
+        font-size: 24px;
     }
     .card-subtitle {
         font-size: 10px;
