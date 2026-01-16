@@ -190,7 +190,7 @@ export const RightPanel: React.FC = () => {
       {/* SECTION 4: THE STRATEGIC PARTNERS */}
       <section className="h-screen px-8 md:px-16 bg-white border-y border-gray-100 overflow-y-auto flex items-center">
         <div className="max-w-5xl mx-auto text-center py-8 w-full">
-           <h2 className="text-4xl font-montserrat font-bold text-ink mb-8">In Association With</h2>
+           <h2 className="text-5xl font-montserrat font-bold text-ink mb-8">In Association With</h2>
 
            {/* Tier 1 */}
            <div className="mb-10">
@@ -205,15 +205,10 @@ export const RightPanel: React.FC = () => {
            </div>
 
            {/* Tier 2 */}
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center max-w-3xl mx-auto mb-10 opacity-80">
+           <div className="flex justify-center items-center max-w-3xl mx-auto mb-10 opacity-80">
               <img
                 src="/images/partners/LT%20Commercial%20group%20logo.png"
                 alt="LT Commercial Group"
-                className="h-12 md:h-14 mx-auto object-contain"
-              />
-              <img
-                src="/images/partners/Dacy%20logo.png"
-                alt="Dacy Business Park"
                 className="h-12 md:h-14 mx-auto object-contain"
               />
            </div>
