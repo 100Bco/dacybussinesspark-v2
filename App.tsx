@@ -5,19 +5,14 @@ import { RightPanel } from './components/RightPanel';
 const App: React.FC = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-paper font-sans">
-      
-      {/* 
-        Mobile Layout Strategy:
-        We want the header and hook to be first, but the Split Screen logic 
-        normally puts LeftPanel (Form) first in DOM.
-        
-        On Mobile: We will render components in a stacked order.
-        On Desktop: Side by side.
-      */}
 
-      {/* Left Panel: Sticky Conversion Engine */}
-      {/* On mobile, this will appear after the content or we can adjust order via flex */}
-      <div className="w-full md:w-[30%] md:h-screen md:sticky md:top-0 order-2 md:order-1 border-t md:border-t-0 border-gray-200 md:border-none">
+      {/* Mobile: LeftPanel appears after Hero - Hidden on desktop */}
+      <div className="md:hidden w-full order-2">
+        <LeftPanel />
+      </div>
+
+      {/* Desktop: Sticky Left Panel */}
+      <div className="hidden md:block md:w-[30%] md:h-screen md:sticky md:top-0 md:order-1 border-t md:border-t-0 border-gray-200 md:border-none">
         <LeftPanel />
       </div>
 
