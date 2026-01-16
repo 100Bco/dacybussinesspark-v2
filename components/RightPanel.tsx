@@ -43,12 +43,11 @@ export const RightPanel: React.FC = () => {
            {/* Title Group */}
            <div className="mb-10 md:mb-12 max-w-4xl">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-3 md:mb-4 leading-[0.95] tracking-tight">
-                Your Warehouse. <br/>Your Equity.
+                Your Warehouse. Your Equity.
               </h2>
               <div className="w-16 md:w-24 h-px bg-alert mb-3 md:mb-4"></div>
 
               <p className="text-sm md:text-base leading-relaxed text-graphite font-light max-w-3xl font-sans mb-4 md:mb-6">
-                Inventory First Look. <strong className="text-ink font-medium"></strong>
               </p>
 
               {/* PROJECT GALLERY CAROUSEL */}
@@ -92,22 +91,22 @@ export const RightPanel: React.FC = () => {
               {/* Item 1 */}
               <div className="pt-4 border-t border-gray-200 group hover:border-alert transition-colors duration-500">
                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-mono font-bold text-base uppercase tracking-wider text-ink">Inventory Preview</h4>
+                    <h4 className="font-mono font-bold text-base uppercase tracking-wider text-ink">1,500 - 15,000 SQFT</h4>
                     <Building2 className="w-4 h-4 text-gray-300 group-hover:text-alert transition-colors" />
                  </div>
                  <p className="text-sm text-graphite leading-relaxed font-sans">
-                   First look at 1,500 – 15,000 SQFT flex units suited for diverse industries.
+                   First look at Phase II flex units. Move-in ready.
                  </p>
               </div>
 
               {/* Item 2 */}
               <div className="pt-4 border-t border-gray-200 group hover:border-alert transition-colors duration-500">
                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-mono font-bold text-base uppercase tracking-wider text-ink">Ownership Opportunity</h4>
+                    <h4 className="font-mono font-bold text-base uppercase tracking-wider text-ink">Build Asset</h4>
                     <TrendingUp className="w-4 h-4 text-gray-300 group-hover:text-alert transition-colors" />
                  </div>
                  <p className="text-sm text-graphite leading-relaxed font-sans">
-                   Stop renting the dream. A rare chance for owner-operators to build equity.
+                   Stop renting the dream. Secure a tangible asset for your business.
                  </p>
               </div>
            </div>
