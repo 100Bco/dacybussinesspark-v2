@@ -32,9 +32,9 @@ export const PlexusSphereSection: React.FC = () => {
     updateSize();
     window.addEventListener('resize', updateSize);
 
-    // Initialize nodes in 3D sphere - fewer nodes, smaller radius
-    const nodeCount = 40;
-    const radius = Math.min(canvas.width, canvas.height) * 0.15;
+    // Initialize nodes in 3D sphere - visible sphere
+    const nodeCount = 60;
+    const radius = Math.min(canvas.width, canvas.height) * 0.25;
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
 
@@ -102,9 +102,13 @@ export const PlexusSphereSection: React.FC = () => {
             const rotatedX2 = otherNode.x * Math.cos(rotation) - otherNode.z * Math.sin(rotation);
             const rotatedZ2 = otherNode.x * Math.sin(rotation) + otherNode.z * Math.cos(rotation);
 
-            // Much more subtle lines
-            ctx.strokeStyle = `rgba(0, 0, 0, ${opacity * 0.08})`;
-            ctx.lineWidth = 0.5;
+            // Visible lines with depth
+            const depth1 = (rotatedZ1 / radius + 1) / 2;
+            const depth2 = (rotatedZ2 / radius + 1) / 2;
+            const avgDepth = (depth1 + depth2) / 2;
+
+            ctx.strokeStyle = `rgba(0, 0, 0, ${opacity * (0.15 + avgDepth * 0.15)})`;
+            ctx.lineWidth = 0.8;
 
             ctx.beginPath();
             ctx.moveTo(centerX + rotatedX1, centerY + node.y);
@@ -114,16 +118,16 @@ export const PlexusSphereSection: React.FC = () => {
         });
       });
 
-      // Draw nodes - much more subtle
+      // Draw nodes - visible dots
       sortedNodes.forEach((node) => {
         const rotatedX = node.x * Math.cos(rotation) - node.z * Math.sin(rotation);
         const rotatedZ = node.x * Math.sin(rotation) + node.z * Math.cos(rotation);
 
-        // Much smaller and more subtle dots
+        // Visible dots with depth variation
         const depth = (rotatedZ / radius + 1) / 2;
-        const size = 1 + depth * 1.5;
+        const size = 2 + depth * 2;
 
-        ctx.fillStyle = `rgba(0, 0, 0, ${0.15 + depth * 0.15})`;
+        ctx.fillStyle = `rgba(0, 0, 0, ${0.4 + depth * 0.3})`;
         ctx.beginPath();
         ctx.arc(centerX + rotatedX, centerY + node.y, size, 0, Math.PI * 2);
         ctx.fill();
@@ -143,9 +147,9 @@ export const PlexusSphereSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-[#f5f5f5] py-20 md:py-32 lg:py-40 relative overflow-hidden">
-      <div className="px-6 md:px-8 lg:px-16 max-w-7xl mx-auto w-full">
-        <div className="relative min-h-[400px] md:min-h-[500px] flex items-center justify-center">
+    <section className="bg-white py-16 md:py-20 lg:py-24 relative overflow-hidden">
+      <div className="px-6 md:px-8 lg:px-16 max-w-6xl mx-auto w-full">
+        <div className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px] flex items-center justify-center">
           {/* Canvas Background - Full container */}
           <canvas
             ref={canvasRef}
