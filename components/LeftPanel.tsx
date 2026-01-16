@@ -36,8 +36,12 @@ export const LeftPanel: React.FC = () => {
       
       {/* A. Top Area - Header */}
       <div className="flex flex-col gap-6 shrink-0">
-        <div className="w-fit px-3 py-1.5 border border-white/20 flex items-center justify-center font-mono font-bold tracking-widest text-xs uppercase shrink-0 text-white/80">
-           DACY <span className="text-alert ml-2">BP</span>
+        <div className="w-fit">
+          <img
+            src="/images/partners/Dacy%20logo.png"
+            alt="Dacy Business Park"
+            className="h-8 object-contain brightness-0 invert"
+          />
         </div>
         
         <h1 className="font-montserrat font-bold text-4xl lg:text-6xl leading-[0.9] text-white tracking-tight">

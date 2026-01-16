@@ -194,7 +194,11 @@ export const RightPanel: React.FC = () => {
 
            {/* Tier 1 */}
            <div className="mb-10">
-             <div className="text-3xl md:text-5xl font-serif text-ink tracking-tight mb-3">SAGE CAPITAL BANK</div>
+             <img
+               src="/images/partners/sage%20bank%20logo.png"
+               alt="Sage Capital Bank"
+               className="h-16 md:h-20 mx-auto mb-3 object-contain"
+             />
              <div className="inline-block px-4 py-1 border border-alert/30 rounded-full">
                 <p className="text-alert font-mono text-[10px] md:text-xs uppercase tracking-widest font-bold">Exclusive Financial Partner</p>
              </div>
@@ -202,28 +206,38 @@ export const RightPanel: React.FC = () => {
 
            {/* Tier 2 */}
            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center max-w-3xl mx-auto mb-10 opacity-80">
-              <div className="text-lg md:text-xl font-mono font-bold tracking-tighter text-gray-600">LT COMMERCIAL GROUP</div>
-              <div className="text-lg md:text-xl font-mono font-bold tracking-tighter text-gray-600">DACY BUSINESS PARK</div>
+              <img
+                src="/images/partners/LT%20Commercial%20group%20logo.png"
+                alt="LT Commercial Group"
+                className="h-12 md:h-14 mx-auto object-contain"
+              />
+              <img
+                src="/images/partners/Dacy%20logo.png"
+                alt="Dacy Business Park"
+                className="h-12 md:h-14 mx-auto object-contain"
+              />
            </div>
 
            {/* Tier 3: Hospitality Logos */}
            <div className="border-t border-gray-200 pt-8 max-w-2xl mx-auto">
              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                
-                {/* Visual Representation of Taco Man Logo */}
-                <div className="flex flex-col items-center gap-2 group cursor-default">
-                  <div className="border-2 border-black p-1 w-12 h-12 rounded-full flex items-center justify-center mb-1 bg-ink text-white">
-                    <span className="font-sans font-black text-xl">T</span>
-                  </div>
-                  <span className="font-sans font-black text-xl tracking-tighter uppercase group-hover:text-alert transition-colors">TACO MAN</span>
+
+                {/* Taco Man Logo */}
+                <div className="flex items-center justify-center group cursor-default">
+                  <img
+                    src="/images/partners/Tacoman%20logo.jpg"
+                    alt="Taco Man"
+                    className="h-20 md:h-24 object-contain group-hover:opacity-100 transition-opacity"
+                  />
                 </div>
 
-                {/* Visual Representation of Subele Tequila Logo */}
-                <div className="flex flex-col items-center gap-2 group cursor-default">
-                   <div className="font-serif italic text-3xl font-bold border-b border-black pb-1 group-hover:text-alert group-hover:border-alert transition-colors">
-                     Súbele
-                   </div>
-                   <span className="font-mono text-[10px] tracking-[0.4em] uppercase">Tequila</span>
+                {/* Subele Tequila Logo */}
+                <div className="flex items-center justify-center group cursor-default">
+                  <img
+                    src="/images/partners/Subele%20logo.png"
+                    alt="Súbele Tequila"
+                    className="h-20 md:h-24 object-contain group-hover:opacity-100 transition-opacity"
+                  />
                 </div>
 
              </div>
@@ -245,7 +259,11 @@ export const RightPanel: React.FC = () => {
       </section>
 
       <footer className="bg-ink py-16 text-center text-white">
-         <div className="font-serif text-2xl mb-4 italic">Dacy Business Park</div>
+         <img
+           src="/images/partners/Dacy%20logo.png"
+           alt="Dacy Business Park"
+           className="h-12 mx-auto mb-4 object-contain brightness-0 invert"
+         />
          <p className="text-xs font-mono text-gray-500 mb-8 tracking-widest uppercase">Phase II Preview Event /// March 11, 2026</p>
          <p className="text-[10px] font-mono text-gray-700 uppercase">Designed by MinAI</p>
       </footer>
