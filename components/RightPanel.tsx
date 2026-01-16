@@ -106,7 +106,7 @@ export const RightPanel: React.FC = () => {
                     <TrendingUp className="w-4 h-4 text-gray-300 group-hover:text-alert transition-colors" />
                  </div>
                  <p className="text-sm text-graphite leading-relaxed font-sans">
-                   Stop renting the dream. Secure a tangible asset for your business.
+                   Stop renting the dream! Secure for your business.
                  </p>
               </div>
            </div>
