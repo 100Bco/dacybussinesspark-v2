@@ -2,6 +2,7 @@ import React from 'react';
 import { LeftPanel } from './components/LeftPanel';
 import { RightPanel } from './components/RightPanel';
 import { HeroSection } from './components/HeroSection';
+import { CurtainReveal } from './components/CurtainReveal';
 
 const App: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const App: React.FC = () => {
       {/* Mobile Only: Hero at top */}
       <div className="md:hidden w-full order-1">
         <HeroSection />
+        <CurtainReveal />
       </div>
 
       {/* Mobile Only: LeftPanel after Hero */}
