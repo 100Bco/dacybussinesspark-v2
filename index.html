@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Industrial Social | Dacy Business Park</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              canvas: '#F2F2F0', // Warm Stone / Light Concrete
+              surface: '#E6E6E3', // Darker Stone for contrast sections
+              paper: '#FFFFFF', // Pure White
+              ink: '#121212', // Rich Charcoal (Softer than pure black)
+              graphite: '#4A4A4A', // Secondary text
+              alert: '#B91C1C', // Deep Crimson (More formal than bright red)
+              line: '#E5E5E5', // Faint lines
+            },
+            fontFamily: {
+              serif: ['Playfair Display', 'serif'],
+              sans: ['Inter', 'sans-serif'], // Formal body text
+              mono: ['Inter', 'sans-serif'], // Replaced Space Grotesk with Inter per request
+              montserrat: ['Montserrat', 'sans-serif'], // New font for headers
+            },
+            animation: {
+              marquee: 'marquee 30s linear infinite',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #FFFFFF;
+        color: #121212;
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F2F2F0; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D1D1D1; 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #B91C1C; 
+      }
+      
+      .font-feature-settings {
+        font-feature-settings: "ss01", "ss02";
+      }
+      
+      /* Input focus animations */
+      .input-group:focus-within label {
+        color: #B91C1C;
+      }
+      .input-group:focus-within input,
+      .input-group:focus-within select {
+        border-color: #B91C1C;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
