@@ -262,7 +262,7 @@ export const RightPanel: React.FC = () => {
          <img
            src="/images/partners/Dacy%20logo.png"
            alt="Dacy Business Park"
-           className="h-12 mx-auto mb-4 object-contain brightness-0 invert"
+           className="h-12 mx-auto mb-4 object-contain"
          />
          <p className="text-xs font-mono text-gray-500 mb-8 tracking-widest uppercase">Phase II Preview Event /// March 11, 2026</p>
          <p className="text-[10px] font-mono text-gray-700 uppercase">Designed by MinAI</p>
