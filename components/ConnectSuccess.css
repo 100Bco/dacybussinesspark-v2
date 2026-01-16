@@ -68,7 +68,7 @@
     box-shadow: 0 0 8px rgba(211, 47, 47, 0.4);
 }
 
-/* Căn giữa TEXT (Không còn hộp trắng) */
+/* Căn giữa TEXT */
 .center-card {
     position: absolute;
     top: 50%;
@@ -89,12 +89,12 @@
     min-width: max-content;
 }
 
-/* Style cho chữ CONNECT */
+/* Style cho chữ CONNECT (Đã giảm size) */
 .card-title {
     font-weight: 900;
-    font-size: 48px; /* Chữ to */
+    font-size: 36px; /* Giảm từ 48px xuống 36px */
     color: #121212;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     line-height: 1;
     margin: 0;
     text-transform: uppercase;
@@ -102,26 +102,26 @@
 
 /* Style cho chữ THE SUCCESS */
 .card-subtitle {
-    font-size: 14px;
+    font-size: 12px; /* Giảm từ 14px xuống 12px */
     color: #D32F2F;
     font-weight: 700;
-    letter-spacing: 6px;
-    margin-top: 12px;
+    letter-spacing: 4px; /* Giãn chữ vừa phải */
+    margin-top: 10px;
     text-transform: uppercase;
 }
 
-/* Responsive Mobile */
+/* Responsive Mobile (Đã giảm size) */
 @media (max-width: 768px) {
     .connect-success-section {
         height: 500px;
     }
     .card-title {
-        font-size: 32px;
+        font-size: 24px; /* Giảm từ 32px xuống 24px */
     }
     .card-subtitle {
-        font-size: 11px;
-        letter-spacing: 3px;
-        margin-top: 8px;
+        font-size: 10px;
+        letter-spacing: 2px;
+        margin-top: 6px;
     }
     .ring-large { width: 340px; height: 340px; }
     .ring-medium { width: 250px; height: 250px; }
