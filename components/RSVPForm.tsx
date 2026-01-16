@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 export const RSVPForm: React.FC = () => {
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  const inputClasses = "w-full bg-transparent border-b border-gray-300 py-3 text-ink text-xl outline-none transition-all duration-300 placeholder:text-gray-300 font-serif focus:border-alert focus:placeholder-gray-400";
+  const inputClasses = "w-full bg-transparent border-b border-gray-300 py-3 text-ink text-xl outline-none transition-all duration-300 placeholder:text-gray-300 font-sans focus:border-alert focus:placeholder-gray-400";
   const labelClasses = "block text-[10px] font-mono font-bold uppercase tracking-widest text-gray-500 mb-2 transition-colors duration-300";
 
   return (
