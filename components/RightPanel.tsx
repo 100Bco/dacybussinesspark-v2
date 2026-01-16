@@ -209,7 +209,7 @@ export const RightPanel: React.FC = () => {
               <img
                 src="/images/partners/LT%20Commercial%20group%20logo.png"
                 alt="LT Commercial Group"
-                className="h-12 md:h-14 mx-auto object-contain"
+                className="h-20 md:h-24 mx-auto object-contain"
               />
            </div>
 
