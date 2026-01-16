@@ -13,6 +13,7 @@ const PROJECT_IMAGES = [
 
 export const RightPanel: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -20,6 +21,17 @@ export const RightPanel: React.FC = () => {
     }, 3000);
 
     return () => clearInterval(slideInterval);
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   return (
@@ -103,7 +115,7 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 3: PLEXUS SPHERE */}
-      <PlexusSphereSection />
+      <PlexusSphereSection isMobile={isMobile} />
 
       {/* SECTION 4: THE STRATEGIC PARTNERS */}
       <section className="px-6 md:px-8 lg:px-16 bg-white border-y border-gray-100 py-12 md:py-16 lg:py-20">
