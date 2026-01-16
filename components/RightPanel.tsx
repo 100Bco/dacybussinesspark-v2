@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RSVPForm } from './RSVPForm';
 import { PlexusSphereSection } from './PlexusSphereSection';
-import { SectionTransition } from './SectionTransition';
 import { Building2, TrendingUp, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const PROJECT_IMAGES = [
@@ -37,9 +36,6 @@ export const RightPanel: React.FC = () => {
 
   return (
     <div className="w-full bg-paper text-ink selection:bg-alert/10 selection:text-alert">
-
-      {/* CURTAIN TRANSITION */}
-      <SectionTransition />
 
       {/* SECTION 2: THE BUSINESS CASE */}
       <section className="bg-paper py-12 md:py-16 lg:py-20">
