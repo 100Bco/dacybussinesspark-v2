@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RSVPForm } from './RSVPForm';
+import { PlexusSphereSection } from './PlexusSphereSection';
 import { Building2, TrendingUp, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const PROJECT_IMAGES = [
@@ -101,63 +102,8 @@ export const RightPanel: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 3: THE HOSPITALITY */}
-      <section className="bg-canvas py-12 md:py-16 lg:py-20">
-        <div className="px-6 md:px-8 lg:px-16 max-w-[1600px] mx-auto w-full">
-
-            {/* Header Area */}
-            <div className="mb-8 md:mb-10 max-w-4xl">
-               <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-3 md:mb-4 leading-none">Crafted <br/>Conversations.</h2>
-               <p className="text-sm md:text-base text-graphite leading-relaxed mb-3 md:mb-4 font-sans font-light max-w-2xl">
-                 Most open houses are transactional. This is relational. We are trading sales pitches for genuine connection, fueled by local culinary craftsmanship.
-               </p>
-            </div>
-
-            {/* Images - Side by Side, Square, Smaller */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              
-              {/* Item 1: Taco Man */}
-               <div className="group cursor-pointer max-w-sm mx-auto">
-                  {/* Changed to aspect-square and max-w-sm to make it smaller and square */}
-                  <div className="w-full aspect-square overflow-hidden rounded-sm mb-3 md:mb-4 relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=2271&auto=format&fit=crop"
-                      alt="Street Tacos"
-                      className="w-full h-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-150"
-                    />
-                  </div>
-                  <div className="border-t border-gray-300 pt-2 md:pt-3 flex justify-between items-end">
-                     <div>
-                        <h3 className="text-xl md:text-2xl font-sans font-bold text-ink mb-1">Live-Fire Culinary</h3>
-                        <p className="font-mono text-xs text-alert uppercase tracking-widest font-bold">Taco Man</p>
-                     </div>
-                     <ArrowRight className="w-4 md:w-5 h-4 md:h-5 text-gray-300 group-hover:text-alert transition-colors duration-300" />
-                  </div>
-               </div>
-
-               {/* Item 2: Tequila */}
-               <div className="group cursor-pointer mt-0 max-w-sm mx-auto">
-                   {/* Changed to aspect-square and max-w-sm to make it smaller and square */}
-                  <div className="w-full aspect-square overflow-hidden rounded-sm mb-3 md:mb-4 relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2340&auto=format&fit=crop"
-                      alt="Tequila Flight"
-                      className="w-full h-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-150"
-                    />
-                  </div>
-                   <div className="border-t border-gray-300 pt-2 md:pt-3 flex justify-between items-end">
-                     <div>
-                        <h3 className="text-xl md:text-2xl font-sans font-bold text-ink mb-1">Agave Tasting</h3>
-                        <p className="font-mono text-xs text-alert uppercase tracking-widest font-bold">Subele Tequila</p>
-                     </div>
-                     <ArrowRight className="w-4 md:w-5 h-4 md:h-5 text-gray-300 group-hover:text-alert transition-colors duration-300" />
-                  </div>
-               </div>
-
-            </div>
-
-        </div>
-      </section>
+      {/* SECTION 3: PLEXUS SPHERE */}
+      <PlexusSphereSection />
 
       {/* SECTION 4: THE STRATEGIC PARTNERS */}
       <section className="px-6 md:px-8 lg:px-16 bg-white border-y border-gray-100 py-12 md:py-16 lg:py-20">
