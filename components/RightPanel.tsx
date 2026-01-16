@@ -243,12 +243,12 @@ export const RightPanel: React.FC = () => {
 
       {/* SECTION 5: RSVP FORM */}
       <section id="rsvp-section" className="h-screen px-6 md:px-8 lg:px-16 bg-canvas scroll-mt-0 overflow-y-auto flex items-center">
-        <div className="max-w-3xl mx-auto py-6 md:py-8 w-full">
-          <div className="mb-6 md:mb-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-ink mb-3 md:mb-4">Confirm Your Attendance.</h2>
-            <p className="text-graphite font-sans text-sm md:text-base font-light">Space is strictly limited to ensure quality networking.</p>
+        <div className="max-w-2xl mx-auto py-8 md:py-10 w-full">
+          <div className="mb-8 md:mb-10 text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-montserrat font-bold text-ink mb-2 md:mb-3">Confirm Your Attendance.</h2>
+            <p className="text-graphite font-sans text-xs md:text-sm font-light">Space is strictly limited to ensure quality networking.</p>
           </div>
-          
+
           <RSVPForm />
         </div>
       </section>
