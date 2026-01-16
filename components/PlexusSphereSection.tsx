@@ -180,7 +180,7 @@ export const PlexusSphereSection: React.FC<PlexusSphereProps> = ({ isMobile = fa
     <section
       ref={containerRef}
       style={{
-        height: '600px',
+        height: '450px',
         width: '100%',
         position: 'relative',
         backgroundColor: '#FFFFFF',
