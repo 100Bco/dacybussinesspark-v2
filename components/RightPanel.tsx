@@ -26,15 +26,15 @@ export const RightPanel: React.FC = () => {
       
       {/* SECTION 1: HERO VIDEO */}
       <section className="relative h-screen w-full overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2340&auto=format&fit=crop" 
-          alt="Networking Atmosphere" 
+        <img
+          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2340&auto=format&fit=crop"
+          alt="Networking Atmosphere"
           className="w-full h-full object-cover grayscale opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent opacity-80"></div>
-        <div className="absolute bottom-0 left-0 p-8 md:p-16 w-full">
-          <div className="border-l-2 border-alert pl-6 md:pl-8">
-            <h1 className="text-5xl md:text-8xl font-montserrat font-bold text-white leading-[0.9] tracking-tight">
+        <div className="absolute bottom-0 left-0 p-6 md:p-8 lg:p-16 w-full">
+          <div className="border-l-2 border-alert pl-4 md:pl-6 lg:pl-8">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-montserrat font-bold text-white leading-[0.9] tracking-tight">
               The Insider <br/> <span className="italic text-gray-300">Gathering.</span>
             </h1>
           </div>
@@ -43,15 +43,15 @@ export const RightPanel: React.FC = () => {
 
       {/* SECTION 2: THE BUSINESS CASE */}
       <section className="h-screen bg-paper overflow-y-auto flex items-center">
-        <div className="px-8 md:px-16 max-w-7xl mx-auto py-8 w-full">
+        <div className="px-6 md:px-8 lg:px-16 max-w-7xl mx-auto py-6 md:py-8 w-full">
            {/* Title Group */}
-           <div className="mb-10 max-w-4xl">
-              <h2 className="text-5xl font-montserrat font-bold text-ink mb-4 leading-[0.95] tracking-tight">
+           <div className="mb-6 md:mb-10 max-w-4xl">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-3 md:mb-4 leading-[0.95] tracking-tight">
                 The Pre-Market <br/>Preview.
               </h2>
-              <div className="w-24 h-px bg-alert mb-4"></div>
+              <div className="w-16 md:w-24 h-px bg-alert mb-3 md:mb-4"></div>
 
-              <p className="text-base leading-relaxed text-graphite font-light max-w-3xl font-sans mb-6">
+              <p className="text-sm md:text-base leading-relaxed text-graphite font-light max-w-3xl font-sans mb-4 md:mb-6">
                 Demand for flex-industrial in Kyle is outpacing supply. <strong className="text-ink font-medium">Tour the steel and concrete</strong> of Phase II before the mass market listing.
               </p>
 
@@ -131,12 +131,12 @@ export const RightPanel: React.FC = () => {
 
       {/* SECTION 3: THE HOSPITALITY */}
       <section className="h-screen bg-canvas overflow-y-auto flex items-center">
-        <div className="px-8 md:px-16 max-w-[1600px] mx-auto py-8 w-full">
+        <div className="px-6 md:px-8 lg:px-16 max-w-[1600px] mx-auto py-6 md:py-8 w-full">
 
             {/* Header Area */}
-            <div className="mb-8 max-w-4xl">
-               <h2 className="text-5xl font-montserrat font-bold text-ink mb-4 leading-none">Crafted <br/>Conversations.</h2>
-               <p className="text-base text-graphite leading-relaxed mb-4 font-sans font-light max-w-2xl">
+            <div className="mb-6 md:mb-8 max-w-4xl">
+               <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-3 md:mb-4 leading-none">Crafted <br/>Conversations.</h2>
+               <p className="text-sm md:text-base text-graphite leading-relaxed mb-3 md:mb-4 font-sans font-light max-w-2xl">
                  Most open houses are transactional. This is relational. We are trading sales pitches for genuine connection, fueled by local culinary craftsmanship.
                </p>
             </div>
@@ -145,40 +145,40 @@ export const RightPanel: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               
               {/* Item 1: Taco Man */}
-               <div className="group cursor-pointer max-w-sm">
+               <div className="group cursor-pointer max-w-sm mx-auto">
                   {/* Changed to aspect-square and max-w-sm to make it smaller and square */}
-                  <div className="w-full aspect-square overflow-hidden rounded-sm mb-4 relative">
+                  <div className="w-full aspect-square overflow-hidden rounded-sm mb-3 md:mb-4 relative">
                     <img
                       src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=2271&auto=format&fit=crop"
                       alt="Street Tacos"
                       className="w-full h-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-150"
                     />
                   </div>
-                  <div className="border-t border-gray-300 pt-3 flex justify-between items-end">
+                  <div className="border-t border-gray-300 pt-2 md:pt-3 flex justify-between items-end">
                      <div>
-                        <h3 className="text-2xl font-sans font-bold text-ink mb-1">Live-Fire Culinary</h3>
+                        <h3 className="text-xl md:text-2xl font-sans font-bold text-ink mb-1">Live-Fire Culinary</h3>
                         <p className="font-mono text-xs text-alert uppercase tracking-widest font-bold">Taco Man</p>
                      </div>
-                     <ArrowRight className="w-5 h-5 text-gray-300 group-hover:text-alert transition-colors duration-300" />
+                     <ArrowRight className="w-4 md:w-5 h-4 md:h-5 text-gray-300 group-hover:text-alert transition-colors duration-300" />
                   </div>
                </div>
 
                {/* Item 2: Tequila */}
-               <div className="group cursor-pointer mt-0 max-w-sm">
+               <div className="group cursor-pointer mt-0 max-w-sm mx-auto">
                    {/* Changed to aspect-square and max-w-sm to make it smaller and square */}
-                  <div className="w-full aspect-square overflow-hidden rounded-sm mb-4 relative">
+                  <div className="w-full aspect-square overflow-hidden rounded-sm mb-3 md:mb-4 relative">
                     <img
                       src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2340&auto=format&fit=crop"
                       alt="Tequila Flight"
                       className="w-full h-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-150"
                     />
                   </div>
-                   <div className="border-t border-gray-300 pt-3 flex justify-between items-end">
+                   <div className="border-t border-gray-300 pt-2 md:pt-3 flex justify-between items-end">
                      <div>
-                        <h3 className="text-2xl font-sans font-bold text-ink mb-1">Agave Tasting</h3>
+                        <h3 className="text-xl md:text-2xl font-sans font-bold text-ink mb-1">Agave Tasting</h3>
                         <p className="font-mono text-xs text-alert uppercase tracking-widest font-bold">Subele Tequila</p>
                      </div>
-                     <ArrowRight className="w-5 h-5 text-gray-300 group-hover:text-alert transition-colors duration-300" />
+                     <ArrowRight className="w-4 md:w-5 h-4 md:h-5 text-gray-300 group-hover:text-alert transition-colors duration-300" />
                   </div>
                </div>
 
@@ -188,41 +188,41 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 4: THE STRATEGIC PARTNERS */}
-      <section className="h-screen px-8 md:px-16 bg-white border-y border-gray-100 overflow-y-auto flex items-center">
-        <div className="max-w-5xl mx-auto text-center py-8 w-full">
-           <h2 className="text-5xl font-montserrat font-bold text-ink mb-8">In Association With</h2>
+      <section className="h-screen px-6 md:px-8 lg:px-16 bg-white border-y border-gray-100 overflow-y-auto flex items-center">
+        <div className="max-w-5xl mx-auto text-center py-6 md:py-8 w-full">
+           <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-6 md:mb-8">In Association With</h2>
 
            {/* Tier 1 */}
-           <div className="mb-10">
+           <div className="mb-8 md:mb-10">
              <img
                src="/images/partners/sage%20bank%20logo.png"
                alt="Sage Capital Bank"
-               className="h-16 md:h-20 mx-auto mb-3 object-contain"
+               className="h-12 md:h-16 lg:h-20 mx-auto mb-3 object-contain"
              />
-             <div className="inline-block px-4 py-1 border border-alert/30 rounded-full">
-                <p className="text-alert font-mono text-[10px] md:text-xs uppercase tracking-widest font-bold">Exclusive Financial Partner</p>
+             <div className="inline-block px-3 md:px-4 py-1 border border-alert/30 rounded-full">
+                <p className="text-alert font-mono text-[9px] md:text-[10px] lg:text-xs uppercase tracking-widest font-bold">Exclusive Financial Partner</p>
              </div>
            </div>
 
            {/* Tier 2 */}
-           <div className="flex justify-center items-center max-w-3xl mx-auto mb-10 opacity-80">
+           <div className="flex justify-center items-center max-w-3xl mx-auto mb-8 md:mb-10 opacity-80">
               <img
                 src="/images/partners/LT%20Commercial%20group%20logo.png"
                 alt="LT Commercial Group"
-                className="h-20 md:h-24 mx-auto object-contain"
+                className="h-16 md:h-20 lg:h-24 mx-auto object-contain"
               />
            </div>
 
            {/* Tier 3: Hospitality Logos */}
-           <div className="border-t border-gray-200 pt-8 max-w-2xl mx-auto">
-             <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+           <div className="border-t border-gray-200 pt-6 md:pt-8 max-w-2xl mx-auto">
+             <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 lg:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
 
                 {/* Taco Man Logo */}
                 <div className="flex items-center justify-center group cursor-default">
                   <img
                     src="/images/partners/Tacoman%20logo.jpg"
                     alt="Taco Man"
-                    className="h-20 md:h-24 object-contain group-hover:opacity-100 transition-opacity"
+                    className="h-16 md:h-20 lg:h-24 object-contain group-hover:opacity-100 transition-opacity"
                   />
                 </div>
 
@@ -231,7 +231,7 @@ export const RightPanel: React.FC = () => {
                   <img
                     src="/images/partners/Subele%20logo.png"
                     alt="Súbele Tequila"
-                    className="h-20 md:h-24 object-contain group-hover:opacity-100 transition-opacity"
+                    className="h-16 md:h-20 lg:h-24 object-contain group-hover:opacity-100 transition-opacity"
                   />
                 </div>
 
@@ -242,25 +242,25 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 5: RSVP FORM */}
-      <section id="rsvp-section" className="h-screen px-8 md:px-16 bg-canvas scroll-mt-0 overflow-y-auto flex items-center">
-        <div className="max-w-3xl mx-auto py-8 w-full">
-          <div className="mb-8 text-center">
-            <h2 className="text-4xl font-montserrat font-bold text-ink mb-4">Confirm Your Attendance.</h2>
-            <p className="text-graphite font-sans text-base font-light">Space is strictly limited to ensure quality networking.</p>
+      <section id="rsvp-section" className="h-screen px-6 md:px-8 lg:px-16 bg-canvas scroll-mt-0 overflow-y-auto flex items-center">
+        <div className="max-w-3xl mx-auto py-6 md:py-8 w-full">
+          <div className="mb-6 md:mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-ink mb-3 md:mb-4">Confirm Your Attendance.</h2>
+            <p className="text-graphite font-sans text-sm md:text-base font-light">Space is strictly limited to ensure quality networking.</p>
           </div>
           
           <RSVPForm />
         </div>
       </section>
 
-      <footer className="bg-ink py-16 text-center text-white">
+      <footer className="bg-ink py-12 md:py-16 text-center text-white px-6">
          <img
            src="/images/partners/Dacy%20logo.png"
            alt="Dacy Business Park"
-           className="h-12 mx-auto mb-4 object-contain"
+           className="h-10 md:h-12 mx-auto mb-3 md:mb-4 object-contain"
          />
-         <p className="text-xs font-mono text-gray-500 mb-8 tracking-widest uppercase">Phase II Preview Event /// March 11, 2026</p>
-         <p className="text-[10px] font-mono text-gray-700 uppercase">Designed by MinAI</p>
+         <p className="text-[10px] md:text-xs font-mono text-gray-500 mb-6 md:mb-8 tracking-widest uppercase">Phase II Preview Event /// March 11, 2026</p>
+         <p className="text-[9px] md:text-[10px] font-mono text-gray-700 uppercase">Designed by MinAI</p>
       </footer>
     </div>
   );
