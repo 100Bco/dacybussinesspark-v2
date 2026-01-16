@@ -75,7 +75,7 @@ export const RightPanel: React.FC = () => {
            </div>
 
            {/* Features List with Hairline Dividers */}
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {/* Item 1 */}
               <div className="pt-4 border-t border-gray-200 group hover:border-alert transition-colors duration-500">
                  <div className="flex justify-between items-start mb-2">
@@ -95,17 +95,6 @@ export const RightPanel: React.FC = () => {
                  </div>
                  <p className="text-sm text-graphite leading-relaxed font-sans">
                    Stop renting the dream. A rare chance for owner-operators to build equity.
-                 </p>
-              </div>
-
-              {/* Item 3 */}
-              <div className="pt-4 border-t border-gray-200 group hover:border-alert transition-colors duration-500">
-                 <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-mono font-bold text-base uppercase tracking-wider text-ink">Broker Protection</h4>
-                    <ShieldCheck className="w-4 h-4 text-gray-300 group-hover:text-alert transition-colors" />
-                 </div>
-                 <p className="text-sm text-graphite leading-relaxed font-sans">
-                   We value and protect our broker partnerships. Full commission structure protected.
                  </p>
               </div>
            </div>
