@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RSVPForm } from './RSVPForm';
-import { PlexusSphereSection } from './PlexusSphereSection';
+import { ConnectSuccessSection } from './ConnectSuccessSection';
 import { Building2, TrendingUp, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const PROJECT_IMAGES = [
@@ -90,8 +90,8 @@ export const RightPanel: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 3: PLEXUS SPHERE */}
-      <PlexusSphereSection isMobile={isMobile} />
+      {/* SECTION 3: CONNECT SUCCESS */}
+       <ConnectSuccessSection />
 
       {/* SECTION 4: THE STRATEGIC PARTNERS */}
       <section className="px-6 md:px-8 lg:px-16 bg-white py-12 md:py-16 lg:py-20">
