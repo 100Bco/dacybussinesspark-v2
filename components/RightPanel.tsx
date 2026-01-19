@@ -44,12 +44,12 @@ export const RightPanel: React.FC = () => {
            {/* Title Group */}
            <div className="mb-10 md:mb-12 max-w-4xl">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-6 md:mb-8 leading-[0.95] tracking-tight">
-                Stop renting your dream!
+                Stop Renting Your Dream!
               </h2>
 
               {/* PROJECT GALLERY CAROUSEL */}
               <div className="w-full mb-6 md:mb-8">
-                <div className="relative overflow-hidden rounded-sm w-full h-[200px] md:h-[280px] bg-gray-100">
+                <div className="relative overflow-hidden rounded-sm w-full h-[300px] md:h-[400px] lg:h-[500px] bg-gray-100">
                   <div
                     className="flex h-full transition-transform duration-700 ease-in-out"
                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -83,7 +83,7 @@ export const RightPanel: React.FC = () => {
               </div>
 
               {/* Single Description Text */}
-              <p className="text-base md:text-lg font-mono font-bold uppercase tracking-wider text-ink">
+              <p className="text-sm md:text-base text-graphite font-sans font-light text-center">
                 First look at Phase II flex units. Secure for your business.
               </p>
            </div>
@@ -99,13 +99,13 @@ export const RightPanel: React.FC = () => {
            <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-10 md:mb-12">Hosted by</h2>
 
            {/* All 4 Logos in a Row */}
-           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
+           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
               {/* Sage Capital Bank */}
               <div className="flex items-center justify-center">
                 <img
                   src="/images/partners/sage%20bank%20logo.png"
                   alt="Sage Capital Bank"
-                  className="h-12 md:h-16 lg:h-20 object-contain"
+                  className="h-12 md:h-14 lg:h-16 w-full object-contain"
                 />
               </div>
 
@@ -114,7 +114,7 @@ export const RightPanel: React.FC = () => {
                 <img
                   src="/images/partners/LT%20Commercial%20group%20logo.png"
                   alt="LT Commercial Group"
-                  className="h-12 md:h-16 lg:h-20 object-contain"
+                  className="h-12 md:h-14 lg:h-16 w-full object-contain"
                 />
               </div>
 
@@ -123,7 +123,7 @@ export const RightPanel: React.FC = () => {
                 <img
                   src="/images/partners/Tacoman%20logo.jpg"
                   alt="Taco Man"
-                  className="h-12 md:h-16 lg:h-20 object-contain"
+                  className="h-12 md:h-14 lg:h-16 w-full object-contain"
                 />
               </div>
 
@@ -132,7 +132,7 @@ export const RightPanel: React.FC = () => {
                 <img
                   src="/images/partners/Subele%20logo.png"
                   alt="Súbele Tequila"
-                  className="h-12 md:h-16 lg:h-20 object-contain"
+                  className="h-12 md:h-14 lg:h-16 w-full object-contain"
                 />
               </div>
            </div>
@@ -159,7 +159,14 @@ export const RightPanel: React.FC = () => {
            className="h-10 md:h-12 mx-auto mb-3 md:mb-4 object-contain"
          />
          <p className="text-[10px] md:text-xs font-mono text-gray-500 mb-6 md:mb-8 tracking-widest uppercase">Phase II Preview Event /// March 11, 2026</p>
-         <p className="text-[9px] md:text-[10px] font-mono text-gray-700 uppercase">Designed by MinAI</p>
+         <a
+           href="https://www.minai.biz/"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="text-[9px] md:text-[10px] font-mono text-white uppercase hover:text-alert transition-colors"
+         >
+           Powered by MinaAI
+         </a>
       </footer>
     </div>
   );
