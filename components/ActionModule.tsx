@@ -59,7 +59,7 @@ export const ActionModule: React.FC = () => {
       <div className="w-full md:w-[350px] p-6 md:p-8 flex flex-col justify-center items-center bg-gradient-to-br from-charcoal to-[#151515]">
          <button className="w-full group relative overflow-hidden bg-neon text-charcoal font-black font-sans text-lg uppercase py-4 px-6 rounded transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,59,48,0.6)]">
             <span className="relative z-10 flex items-center justify-center gap-2">
-              Secure Your Access <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Secure Your Attendance <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
          </button>
