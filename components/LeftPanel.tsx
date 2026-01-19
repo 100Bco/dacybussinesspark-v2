@@ -129,7 +129,7 @@ export const LeftPanel: React.FC = () => {
           className="w-full bg-white text-ink py-3 md:py-4 hover:bg-alert hover:text-white transition-all duration-300 group relative overflow-hidden"
         >
           <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3 font-mono font-bold tracking-widest text-[10px] md:text-xs uppercase">
-            Secure Access
+            Secure Your Attendance
             <ArrowRight className="w-3.5 md:w-4 h-3.5 md:h-4 group-hover:translate-x-1 transition-transform" />
           </span>
         </button>
