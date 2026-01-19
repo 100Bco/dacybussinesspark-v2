@@ -4,11 +4,12 @@ import { ConnectSuccessSection } from './ConnectSuccessSection';
 import { Building2, TrendingUp, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const PROJECT_IMAGES = [
-  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2340&auto=format&fit=crop", // Industrial Exterior
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop", // Modern Flex Space
-  "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2340&auto=format&fit=crop", // Construction/Steel
-  "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2340&auto=format&fit=crop", // Warehouse Interior
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2340&auto=format&fit=crop"  // Corporate/Business Park
+  "/images/gallery/Image 0.jpg",
+  "/images/gallery/Image 1.jpg",
+  "/images/gallery/Image 2.jpg",
+  "/images/gallery/Image 3.jpg",
+  "/images/gallery/Image 4.jpg",
+  "/images/gallery/Image 5.jpg"
 ];
 
 export const RightPanel: React.FC = () => {
@@ -42,26 +43,22 @@ export const RightPanel: React.FC = () => {
         <div className="px-6 md:px-8 lg:px-16 max-w-7xl mx-auto w-full">
            {/* Title Group */}
            <div className="mb-10 md:mb-12 max-w-4xl">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-3 md:mb-4 leading-[0.95] tracking-tight">
-                Your Warehouse. Your Equity.
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-6 md:mb-8 leading-[0.95] tracking-tight">
+                Stop Renting Your Dream!
               </h2>
-              <div className="w-16 md:w-24 h-px bg-alert mb-3 md:mb-4"></div>
-
-              <p className="text-sm md:text-base leading-relaxed text-graphite font-light max-w-3xl font-sans mb-4 md:mb-6">
-              </p>
 
               {/* PROJECT GALLERY CAROUSEL */}
-              <div className="w-full">
-                <div className="relative overflow-hidden rounded-sm w-full h-[200px] md:h-[280px] bg-gray-100">
-                  <div 
+              <div className="w-full mb-6 md:mb-8">
+                <div className="relative overflow-hidden rounded-sm w-full h-[300px] md:h-[400px] lg:h-[500px] bg-gray-100">
+                  <div
                     className="flex h-full transition-transform duration-700 ease-in-out"
                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                   >
                     {PROJECT_IMAGES.map((img, index) => (
                       <div key={index} className="min-w-full h-full relative">
-                         <img 
-                            src={img} 
-                            alt={`Dacy Business Park Preview ${index + 1}`} 
+                         <img
+                            src={img}
+                            alt={`Dacy Business Park Preview ${index + 1}`}
                             className="w-full h-full object-cover"
                          />
                          <div className="absolute inset-0 bg-ink/10"></div>
@@ -84,31 +81,11 @@ export const RightPanel: React.FC = () => {
                   ))}
                 </div>
               </div>
-           </div>
 
-           {/* Features List with Hairline Dividers */}
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              {/* Item 1 */}
-              <div className="pt-4 border-t border-gray-200 group hover:border-alert transition-colors duration-500">
-                 <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-mono font-bold text-base uppercase tracking-wider text-ink">1,500 - 15,000 SQFT</h4>
-                    <Building2 className="w-4 h-4 text-gray-300 group-hover:text-alert transition-colors" />
-                 </div>
-                 <p className="text-sm text-graphite leading-relaxed font-sans">
-                   First look at Phase II flex units. Move-in ready.
-                 </p>
-              </div>
-
-              {/* Item 2 */}
-              <div className="pt-4 border-t border-gray-200 group hover:border-alert transition-colors duration-500">
-                 <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-mono font-bold text-base uppercase tracking-wider text-ink">Build Asset</h4>
-                    <TrendingUp className="w-4 h-4 text-gray-300 group-hover:text-alert transition-colors" />
-                 </div>
-                 <p className="text-sm text-graphite leading-relaxed font-sans">
-                   Stop renting the dream! Secure for your business.
-                 </p>
-              </div>
+              {/* Single Description Text */}
+              <p className="text-sm md:text-base text-graphite font-sans font-light text-center">
+                First look at Phase II flex units. Secure for your business.
+              </p>
            </div>
         </div>
       </section>
@@ -118,53 +95,46 @@ export const RightPanel: React.FC = () => {
 
       {/* SECTION 4: THE STRATEGIC PARTNERS */}
       <section className="px-6 md:px-8 lg:px-16 bg-white py-12 md:py-16 lg:py-20">
-        <div className="max-w-5xl mx-auto text-center w-full">
-           <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-6 md:mb-8">In Association With</h2>
+        <div className="max-w-6xl mx-auto text-center w-full">
+           <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-10 md:mb-12">Hosted by</h2>
 
-           {/* Tier 1 */}
-           <div className="mb-8 md:mb-10">
-             <img
-               src="/images/partners/sage%20bank%20logo.png"
-               alt="Sage Capital Bank"
-               className="h-12 md:h-16 lg:h-20 mx-auto mb-3 object-contain"
-             />
-             <div className="inline-block px-3 md:px-4 py-1 border border-alert/30 rounded-full">
-                <p className="text-alert font-mono text-[9px] md:text-[10px] lg:text-xs uppercase tracking-widest font-bold">Exclusive Financial Partner</p>
-             </div>
-           </div>
+           {/* All 4 Logos in a Row */}
+           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
+              {/* Sage Capital Bank */}
+              <div className="flex items-center justify-center">
+                <img
+                  src="/images/partners/sage%20bank%20logo.png"
+                  alt="Sage Capital Bank"
+                  className="h-12 md:h-14 lg:h-16 w-full object-contain"
+                />
+              </div>
 
-           {/* Tier 2 */}
-           <div className="flex justify-center items-center max-w-3xl mx-auto mb-8 md:mb-10 opacity-80">
-              <img
-                src="/images/partners/LT%20Commercial%20group%20logo.png"
-                alt="LT Commercial Group"
-                className="h-16 md:h-20 lg:h-24 mx-auto object-contain"
-              />
-           </div>
+              {/* LT Commercial Group */}
+              <div className="flex items-center justify-center">
+                <img
+                  src="/images/partners/LT%20Commercial%20group%20logo.png"
+                  alt="LT Commercial Group"
+                  className="h-12 md:h-14 lg:h-16 w-full object-contain"
+                />
+              </div>
 
-           {/* Tier 3: Hospitality Logos */}
-           <div className="pt-6 md:pt-8 max-w-2xl mx-auto">
-             <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 lg:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+              {/* Taco Man */}
+              <div className="flex items-center justify-center">
+                <img
+                  src="/images/partners/Tacoman%20logo.jpg"
+                  alt="Taco Man"
+                  className="h-12 md:h-14 lg:h-16 w-full object-contain"
+                />
+              </div>
 
-                {/* Taco Man Logo */}
-                <div className="flex items-center justify-center group cursor-default">
-                  <img
-                    src="/images/partners/Tacoman%20logo.jpg"
-                    alt="Taco Man"
-                    className="h-16 md:h-20 lg:h-24 object-contain group-hover:opacity-100 transition-opacity"
-                  />
-                </div>
-
-                {/* Subele Tequila Logo */}
-                <div className="flex items-center justify-center group cursor-default">
-                  <img
-                    src="/images/partners/Subele%20logo.png"
-                    alt="Súbele Tequila"
-                    className="h-16 md:h-20 lg:h-24 object-contain group-hover:opacity-100 transition-opacity"
-                  />
-                </div>
-
-             </div>
+              {/* Subele Tequila */}
+              <div className="flex items-center justify-center">
+                <img
+                  src="/images/partners/Subele%20logo.png"
+                  alt="Súbele Tequila"
+                  className="h-12 md:h-14 lg:h-16 w-full object-contain"
+                />
+              </div>
            </div>
 
         </div>
@@ -189,7 +159,14 @@ export const RightPanel: React.FC = () => {
            className="h-10 md:h-12 mx-auto mb-3 md:mb-4 object-contain"
          />
          <p className="text-[10px] md:text-xs font-mono text-gray-500 mb-6 md:mb-8 tracking-widest uppercase">Phase II Preview Event /// March 11, 2026</p>
-         <p className="text-[9px] md:text-[10px] font-mono text-gray-700 uppercase">Designed by MinAI</p>
+         <a
+           href="https://www.minai.biz/"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="text-[9px] md:text-[10px] font-mono text-white uppercase hover:text-alert transition-colors"
+         >
+           Powered by MinaAI
+         </a>
       </footer>
     </div>
   );
