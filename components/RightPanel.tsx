@@ -43,12 +43,12 @@ export const RightPanel: React.FC = () => {
            {/* Title Group */}
            <div className="mb-10 md:mb-12 max-w-4xl">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-3 md:mb-4 leading-[0.95] tracking-tight">
-                The Pre-Market <br/>Preview.
+                Your Warehouse. <br/>Your Equity.
               </h2>
               <div className="w-16 md:w-24 h-px bg-alert mb-3 md:mb-4"></div>
 
               <p className="text-sm md:text-base leading-relaxed text-graphite font-light max-w-3xl font-sans mb-4 md:mb-6">
-                Demand for flex-industrial in Kyle is outpacing supply. <strong className="text-ink font-medium">Tour the steel and concrete</strong> of Phase II before the mass market listing.
+                Inventory First Look
               </p>
 
               {/* PROJECT GALLERY CAROUSEL */}
