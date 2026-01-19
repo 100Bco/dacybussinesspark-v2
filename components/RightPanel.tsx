@@ -165,7 +165,7 @@ export const RightPanel: React.FC = () => {
            rel="noopener noreferrer"
            className="text-[9px] md:text-[10px] font-mono text-white uppercase hover:text-alert transition-colors"
          >
-           Powered by MinaAI
+           Powered by MinAI
          </a>
       </footer>
     </div>
