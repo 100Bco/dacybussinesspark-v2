@@ -1,7 +1,7 @@
 /* file: components/ConnectSuccess.css */
 
 /* 1. Import Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
 
 .connect-success-section {
     height: 700px;
@@ -13,7 +13,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
 }
 
 /* 2. Nền chấm mờ */
@@ -56,6 +57,13 @@
     pointer-events: none;
     /* Animation thở vẫn giữ nguyên */
     animation: breathe 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect cho vòng tròn */
+.connect-success-section:hover .pulse-ring {
+    border-color: rgba(0, 0, 0, 0.3);
+    border-width: 1.5px;
 }
 
 /* Kích thước các vòng tròn */
@@ -128,26 +136,32 @@
 
     /* Add bouncing animation */
     animation: breathe 4s ease-in-out infinite;
+    transition: all 0.3s ease;
 }
 
-/* Style cho chữ CONNECT */
+/* Hover effect cho center card */
+.connect-success-section:hover .center-card {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Style cho chữ CONFIRM YOUR SEAT HERE */
 .card-title {
     font-weight: 900;
-    font-size: 36px;
-    color: #121212;
-    letter-spacing: -1px;
-    line-height: 1;
+    font-size: 42px;
+    color: #1A1A1A;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
     margin: 0;
     text-transform: uppercase;
 }
 
-/* Style cho chữ THE SUCCESS */
+/* Style cho chữ Invitation Required */
 .card-subtitle {
-    font-size: 12px;
-    color: #D32F2F;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-top: 10px;
+    font-size: 14px;
+    color: #666666;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin-top: 12px;
     text-transform: uppercase;
 }
 
@@ -157,12 +171,12 @@
         height: 500px;
     }
     .card-title {
-        font-size: 24px;
+        font-size: 28px;
     }
     .card-subtitle {
-        font-size: 10px;
-        letter-spacing: 2px;
-        margin-top: 6px;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        margin-top: 8px;
     }
     .ring-large { width: 340px; height: 340px; }
     .ring-medium { width: 250px; height: 250px; }
