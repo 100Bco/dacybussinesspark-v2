@@ -3,8 +3,12 @@ import React from 'react';
 import './ConnectSuccess.css'; // Import file CSS vừa tạo ở bước 1
 
 export const ConnectSuccessSection: React.FC = () => {
+  const handleClick = () => {
+    window.open('https://api.leadconnectorhq.com/widget/form/vt4QR61BC3YlZj3ph6Wp', '_blank');
+  };
+
   return (
-    <section className="connect-success-section">
+    <section className="connect-success-section" onClick={handleClick} style={{ cursor: 'pointer' }}>
       {/* Lớp nền lưới chấm */}
       <div className="bg-grid"></div>
 

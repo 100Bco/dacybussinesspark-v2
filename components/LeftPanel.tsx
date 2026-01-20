@@ -22,11 +22,8 @@ export const LeftPanel: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToConfirm = () => {
-    const element = document.querySelector('.connect-success-section');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleRegister = () => {
+    window.open('https://api.leadconnectorhq.com/widget/form/vt4QR61BC3YlZj3ph6Wp', '_blank');
   };
 
   const formatTime = (val: number) => String(val).padStart(2, '0');
@@ -125,7 +122,7 @@ export const LeftPanel: React.FC = () => {
         </div>
 
         <button
-          onClick={scrollToConfirm}
+          onClick={handleRegister}
           className="w-full bg-white text-ink py-3 md:py-4 hover:bg-alert hover:text-white transition-all duration-300 group relative overflow-hidden"
         >
           <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3 font-mono font-bold tracking-widest text-[10px] md:text-xs uppercase">
