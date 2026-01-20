@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { RSVPForm } from './RSVPForm';
 import { ConnectSuccessSection } from './ConnectSuccessSection';
 import { Building2, TrendingUp, ShieldCheck, ArrowRight } from 'lucide-react';
 
@@ -90,10 +89,7 @@ export const RightPanel: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 3: CONNECT SUCCESS */}
-       <ConnectSuccessSection />
-
-      {/* SECTION 4: THE STRATEGIC PARTNERS */}
+      {/* SECTION 3: THE STRATEGIC PARTNERS */}
       <section className="px-6 md:px-8 lg:px-16 bg-white py-12 md:py-16 lg:py-20">
         <div className="max-w-6xl mx-auto text-center w-full">
            <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-10 md:mb-12">Hosted by</h2>
@@ -140,17 +136,8 @@ export const RightPanel: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 5: RSVP FORM */}
-      <section id="rsvp-section" className="px-6 md:px-8 lg:px-16 bg-canvas scroll-mt-0 py-12 md:py-16 lg:py-20">
-        <div className="max-w-2xl mx-auto w-full">
-          <div className="mb-8 md:mb-10 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-3 md:mb-4 leading-none">Confirm Your Attendance.</h2>
-            <p className="text-graphite font-sans text-sm md:text-base font-light">Space is strictly limited to ensure quality networking.</p>
-          </div>
-
-          <RSVPForm />
-        </div>
-      </section>
+      {/* SECTION 4: CONNECT SUCCESS - CONFIRM ATTENDANCE */}
+      <ConnectSuccessSection />
 
       <footer className="bg-ink py-12 md:py-16 text-center text-white px-6">
          <img
