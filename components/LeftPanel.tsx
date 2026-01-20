@@ -52,49 +52,47 @@ export const LeftPanel: React.FC = () => {
 
       {/* B. Middle Area (The Focus) - Countdown */}
       <div className="flex flex-col justify-center py-2">
-         <p className="text-alert font-mono text-[9px] md:text-[10px] uppercase tracking-[0.3em] mb-3 md:mb-4 pl-1 animate-pulse">⚠ Event Countdown</p>
+         <p className="text-gray-400 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.3em] mb-3 md:mb-4 pl-1">Event Countdown</p>
 
-         {/* Countdown Box with Urgent Styling */}
-         <div className="border-2 border-alert/50 rounded-sm p-3 md:p-4 bg-gradient-to-br from-alert/10 to-transparent backdrop-blur-sm shadow-[0_0_20px_rgba(255,59,48,0.3)]">
-           <div className="flex flex-nowrap items-baseline gap-1 md:gap-1.5 lg:gap-2 justify-center">
-              {/* Days */}
-              <div className="flex flex-col items-center">
-                <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-alert leading-none drop-shadow-[0_0_8px_rgba(255,59,48,0.8)]">
-                  {formatTime(timeLeft.days)}
-                </span>
-                <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-400 tracking-widest uppercase mt-0.5 md:mt-1">Days</span>
-              </div>
+         {/* Elegant Countdown */}
+         <div className="flex flex-nowrap items-baseline gap-1 md:gap-1.5 lg:gap-2">
+            {/* Days */}
+            <div className="flex flex-col items-center">
+              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-white leading-none">
+                {formatTime(timeLeft.days)}
+              </span>
+              <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-600 tracking-widest uppercase mt-0.5 md:mt-1">Days</span>
+            </div>
 
-              <span className="text-alert font-bold text-2xl md:text-3xl lg:text-5xl leading-none self-start mt-1">:</span>
+            <span className="text-gray-700 font-thin text-2xl md:text-3xl lg:text-5xl leading-none self-start mt-1 opacity-30">:</span>
 
-              {/* Hours */}
-              <div className="flex flex-col items-center">
-                <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-alert leading-none drop-shadow-[0_0_8px_rgba(255,59,48,0.8)]">
-                  {formatTime(timeLeft.hours)}
-                </span>
-                <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-400 tracking-widest uppercase mt-0.5 md:mt-1">Hrs</span>
-              </div>
+            {/* Hours */}
+            <div className="flex flex-col items-center">
+              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-white leading-none">
+                {formatTime(timeLeft.hours)}
+              </span>
+              <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-600 tracking-widest uppercase mt-0.5 md:mt-1">Hrs</span>
+            </div>
 
-              <span className="text-alert font-bold text-2xl md:text-3xl lg:text-5xl leading-none self-start mt-1">:</span>
+            <span className="text-gray-700 font-thin text-2xl md:text-3xl lg:text-5xl leading-none self-start mt-1 opacity-30">:</span>
 
-              {/* Minutes */}
-              <div className="flex flex-col items-center">
-                <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-alert leading-none drop-shadow-[0_0_8px_rgba(255,59,48,0.8)]">
-                  {formatTime(timeLeft.minutes)}
-                </span>
-                <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-400 tracking-widest uppercase mt-0.5 md:mt-1">Min</span>
-              </div>
+            {/* Minutes */}
+            <div className="flex flex-col items-center">
+              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-white leading-none">
+                {formatTime(timeLeft.minutes)}
+              </span>
+              <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-600 tracking-widest uppercase mt-0.5 md:mt-1">Min</span>
+            </div>
 
-              <span className="text-alert font-bold text-2xl md:text-3xl lg:text-5xl leading-none self-start mt-1">:</span>
+            <span className="text-gray-700 font-thin text-2xl md:text-3xl lg:text-5xl leading-none self-start mt-1 opacity-30">:</span>
 
-              {/* Seconds - with pulse animation */}
-              <div className="flex flex-col items-center">
-                <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-alert leading-none animate-pulse drop-shadow-[0_0_12px_rgba(255,59,48,1)]">
-                  {formatTime(timeLeft.seconds)}
-                </span>
-                <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-400 tracking-widest uppercase mt-0.5 md:mt-1">Sec</span>
-              </div>
-           </div>
+            {/* Seconds */}
+            <div className="flex flex-col items-center">
+              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-white leading-none">
+                {formatTime(timeLeft.seconds)}
+              </span>
+              <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-600 tracking-widest uppercase mt-0.5 md:mt-1">Sec</span>
+            </div>
          </div>
       </div>
 
