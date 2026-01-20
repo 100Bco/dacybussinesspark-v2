@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ConnectSuccessSection } from './ConnectSuccessSection';
+import { ConfirmTargetCTA } from './ConfirmTargetCTA';
 import { Building2, TrendingUp, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const PROJECT_IMAGES = [
@@ -136,8 +136,8 @@ export const RightPanel: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 4: CONNECT SUCCESS - CONFIRM ATTENDANCE */}
-      <ConnectSuccessSection />
+      {/* SECTION 4: CONFIRM YOUR SEAT - PREMIUM CTA */}
+      <ConfirmTargetCTA />
 
       <footer className="bg-ink py-12 md:py-16 text-center text-white px-6">
          <img
