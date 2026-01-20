@@ -136,7 +136,7 @@ export const RightPanel: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 4: CONNECT SUCCESS - CONFIRM ATTENDANCE */}
+      {/* SECTION 4: CONFIRM YOUR SEAT */}
       <ConnectSuccessSection />
 
       <footer className="bg-ink py-12 md:py-16 text-center text-white px-6">
