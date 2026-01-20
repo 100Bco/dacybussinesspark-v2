@@ -52,7 +52,7 @@
     top: 50%;
     left: 50%;
     border-radius: 50%;
-    border: 1px dashed rgba(0, 0, 0, 0.15);
+    border: 2px dashed rgba(0, 0, 0, 0.25);
     transform: translate(-50%, -50%);
     pointer-events: none;
     /* Animation thở vẫn giữ nguyên */
@@ -62,8 +62,8 @@
 
 /* Hover effect cho vòng tròn */
 .connect-success-section:hover .pulse-ring {
-    border-color: rgba(0, 0, 0, 0.3);
-    border-width: 1.5px;
+    border-color: rgba(0, 0, 0, 0.4);
+    border-width: 2.5px;
 }
 
 /* Kích thước các vòng tròn */
@@ -125,14 +125,14 @@
     background: transparent;
     box-shadow: none;
     border: none;
-    padding: 0 16px;
+    padding: 0;
 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 200px;
+    min-width: max-content;
 
     /* Add bouncing animation */
     animation: breathe 4s ease-in-out infinite;
@@ -147,21 +147,21 @@
 /* Style cho chữ CONFIRM YOUR SEAT */
 .card-title {
     font-weight: 900;
-    font-size: 30px;
-    color: #1A1A1A;
-    letter-spacing: 0.02em;
-    line-height: 1.1;
+    font-size: 48px;
+    color: #121212;
+    letter-spacing: -0.5px;
+    line-height: 1;
     margin: 0;
     text-transform: uppercase;
 }
 
 /* Style cho chữ Invitation Required */
 .card-subtitle {
-    font-size: 12px;
-    color: #666666;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    margin-top: 10px;
+    font-size: 13px;
+    color: #D32F2F;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-top: 12px;
     text-transform: uppercase;
 }
 
@@ -170,17 +170,14 @@
     .connect-success-section {
         height: 500px;
     }
-    .center-card {
-        max-width: 130px;
-        padding: 0 12px;
-    }
     .card-title {
-        font-size: 20px;
+        font-size: 28px;
+        letter-spacing: -0.3px;
     }
     .card-subtitle {
-        font-size: 10px;
-        letter-spacing: 0.06em;
-        margin-top: 6px;
+        font-size: 11px;
+        letter-spacing: 2.5px;
+        margin-top: 8px;
     }
     .ring-large { width: 340px; height: 340px; }
     .ring-medium { width: 250px; height: 250px; }
