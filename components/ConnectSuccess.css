@@ -125,14 +125,14 @@
     background: transparent;
     box-shadow: none;
     border: none;
-    padding: 0;
+    padding: 0 16px;
 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: max-content;
+    max-width: 200px;
 
     /* Add bouncing animation */
     animation: breathe 4s ease-in-out infinite;
@@ -144,10 +144,10 @@
     transform: translate(-50%, -50%) scale(1.05);
 }
 
-/* Style cho chữ CONFIRM YOUR SEAT HERE */
+/* Style cho chữ CONFIRM YOUR SEAT */
 .card-title {
     font-weight: 900;
-    font-size: 42px;
+    font-size: 30px;
     color: #1A1A1A;
     letter-spacing: 0.02em;
     line-height: 1.1;
@@ -157,11 +157,11 @@
 
 /* Style cho chữ Invitation Required */
 .card-subtitle {
-    font-size: 14px;
+    font-size: 12px;
     color: #666666;
     font-weight: 600;
     letter-spacing: 0.08em;
-    margin-top: 12px;
+    margin-top: 10px;
     text-transform: uppercase;
 }
 
@@ -170,13 +170,17 @@
     .connect-success-section {
         height: 500px;
     }
+    .center-card {
+        max-width: 130px;
+        padding: 0 12px;
+    }
     .card-title {
-        font-size: 28px;
+        font-size: 20px;
     }
     .card-subtitle {
-        font-size: 12px;
+        font-size: 10px;
         letter-spacing: 0.06em;
-        margin-top: 8px;
+        margin-top: 6px;
     }
     .ring-large { width: 340px; height: 340px; }
     .ring-medium { width: 250px; height: 250px; }
