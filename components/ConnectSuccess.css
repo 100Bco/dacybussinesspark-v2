@@ -113,18 +113,21 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 20;
-    
+
     background: transparent;
     box-shadow: none;
     border: none;
     padding: 0;
-    
+
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-width: max-content;
+
+    /* Add bouncing animation */
+    animation: breathe 4s ease-in-out infinite;
 }
 
 /* Style cho chữ CONNECT */
