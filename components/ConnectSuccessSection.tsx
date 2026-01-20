@@ -32,7 +32,7 @@ export const ConnectSuccessSection: React.FC = () => {
 
         {/* Thẻ trung tâm */}
         <div className="center-card">
-          <div className="card-title">CLICK CONFIRM</div>
+          <div className="card-title">CLICK</div>
           <div className="card-subtitle">FOR ATTENDANCE</div>
         </div>
       </div>
