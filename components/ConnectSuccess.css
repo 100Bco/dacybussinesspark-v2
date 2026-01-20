@@ -78,7 +78,7 @@
 .ring-dot::after {
     content: "";
     position: absolute;
-    top: -5px; /* Đặt lên viền trên cùng */
+    bottom: -5px; /* Đặt ở viền dưới cùng */
     left: 50%;
     transform: translateX(-50%);
     width: 10px;

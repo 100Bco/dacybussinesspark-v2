@@ -22,8 +22,8 @@ export const LeftPanel: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToRSVP = () => {
-    const element = document.getElementById('rsvp-section');
+  const scrollToConfirm = () => {
+    const element = document.querySelector('.connect-success-section');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -125,7 +125,7 @@ export const LeftPanel: React.FC = () => {
         </div>
 
         <button
-          onClick={scrollToRSVP}
+          onClick={scrollToConfirm}
           className="w-full bg-white text-ink py-3 md:py-4 hover:bg-alert hover:text-white transition-all duration-300 group relative overflow-hidden"
         >
           <span className="relative z-10 flex items-center justify-center gap-2 md:gap-3 font-mono font-bold tracking-widest text-[10px] md:text-xs uppercase">
