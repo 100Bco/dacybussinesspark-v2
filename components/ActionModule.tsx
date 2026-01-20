@@ -6,6 +6,10 @@ import { CountdownTime } from '../types';
 export const ActionModule: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState<CountdownTime>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
+  const handleRegister = () => {
+    window.open('https://api.leadconnectorhq.com/widget/form/vt4QR61BC3YlZj3ph6Wp', '_blank');
+  };
+
   useEffect(() => {
     // Set target date to March 11, 2026
     const targetDate = new Date('2026-03-11T12:00:00');
@@ -57,7 +61,7 @@ export const ActionModule: React.FC = () => {
 
       {/* CTA Section */}
       <div className="w-full md:w-[350px] p-6 md:p-8 flex flex-col justify-center items-center bg-gradient-to-br from-charcoal to-[#151515]">
-         <button className="w-full group relative overflow-hidden bg-neon text-charcoal font-black font-sans text-lg uppercase py-4 px-6 rounded transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,59,48,0.6)]">
+         <button onClick={handleRegister} className="w-full group relative overflow-hidden bg-neon text-charcoal font-black font-sans text-lg uppercase py-4 px-6 rounded transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,59,48,0.6)]">
             <span className="relative z-10 flex items-center justify-center gap-2">
               Secure Your Attendance <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>

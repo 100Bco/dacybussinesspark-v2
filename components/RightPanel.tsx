@@ -90,7 +90,7 @@ export const RightPanel: React.FC = () => {
       </section>
 
       {/* SECTION 3: THE STRATEGIC PARTNERS */}
-      <section className="px-6 md:px-8 lg:px-16 bg-white py-12 md:py-16 lg:py-20">
+      <section className="px-6 md:px-8 lg:px-16 bg-white py-8 md:py-10 lg:py-12">
         <div className="max-w-6xl mx-auto text-center w-full">
            <h2 className="text-3xl md:text-4xl lg:text-5xl font-montserrat font-bold text-ink mb-10 md:mb-12">Hosted by</h2>
 
