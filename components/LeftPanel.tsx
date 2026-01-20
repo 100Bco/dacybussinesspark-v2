@@ -58,7 +58,7 @@ export const LeftPanel: React.FC = () => {
          <div className="flex flex-nowrap items-baseline gap-1 md:gap-1.5 lg:gap-2">
             {/* Days */}
             <div className="flex flex-col items-center">
-              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-light tracking-tighter text-white leading-none">
+              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-white leading-none">
                 {formatTime(timeLeft.days)}
               </span>
               <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-600 tracking-widest uppercase mt-0.5 md:mt-1">Days</span>
@@ -68,7 +68,7 @@ export const LeftPanel: React.FC = () => {
 
             {/* Hours */}
             <div className="flex flex-col items-center">
-              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-light tracking-tighter text-white leading-none">
+              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-white leading-none">
                 {formatTime(timeLeft.hours)}
               </span>
               <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-600 tracking-widest uppercase mt-0.5 md:mt-1">Hrs</span>
@@ -78,7 +78,7 @@ export const LeftPanel: React.FC = () => {
 
             {/* Minutes */}
             <div className="flex flex-col items-center">
-              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-light tracking-tighter text-white leading-none">
+              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-white leading-none">
                 {formatTime(timeLeft.minutes)}
               </span>
               <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-600 tracking-widest uppercase mt-0.5 md:mt-1">Min</span>
@@ -88,7 +88,7 @@ export const LeftPanel: React.FC = () => {
 
             {/* Seconds */}
             <div className="flex flex-col items-center">
-              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-light tracking-tighter text-white leading-none">
+              <span className="text-3xl md:text-4xl lg:text-6xl font-mono font-bold tracking-tighter text-white leading-none">
                 {formatTime(timeLeft.seconds)}
               </span>
               <span className="text-[8px] md:text-[9px] font-mono font-normal text-gray-600 tracking-widest uppercase mt-0.5 md:mt-1">Sec</span>
